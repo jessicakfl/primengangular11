@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {MenubarModule} from 'primeng/menubar';
 import {TabMenuModule} from 'primeng/tabmenu';
-import { ResizableDraggableComponent } from './resizable-draggable/resizable-draggable.component';
+import { TableOfCardComponent } from './/tableofcard/tableofcard.component';
 import { TableModule } from 'primeng/table';
 @NgModule({
   declarations: [
     AppComponent,
-    ResizableDraggableComponent
+    TableOfCardComponent
   ],
   imports: [
     BrowserModule,

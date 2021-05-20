@@ -8,11 +8,11 @@ const enum Status {
 }
 
 @Component({
-  selector: 'app-resizable-draggable',
-  templateUrl: './resizable-draggable.component.html',
-  styleUrls: ['./resizable-draggable.component.scss']
+  selector: 'tableofcard',
+  templateUrl: './tableofcard.component.html',
+  styleUrls: ['./tableofcard.component.scss']
 })
-export class ResizableDraggableComponent implements OnInit, AfterViewInit {
+export class TableOfCardComponent implements OnInit, AfterViewInit {
   constructor(private cardService: CardService) {}
   @Input('width') public width: number;
   @Input('height') public height: number;
