@@ -73,10 +73,10 @@ export class TableOfCardComponent implements OnInit, AfterViewInit {
   }
 
   private move(){
-    if(this.moveCondMeet()){
+    //if(this.moveCondMeet()){
       this.left = this.mouseClick.left + (this.mouse.x - this.mouseClick.x);
       this.top = this.mouseClick.top + (this.mouse.y - this.mouseClick.y);
-    }
+    ///}
   }
 
   private moveCondMeet(){
