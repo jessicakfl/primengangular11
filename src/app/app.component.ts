@@ -14,7 +14,7 @@ export class AppComponent {
   ngOnInit() {
   this.items = [
     {
-        label: 'File',
+        label: 'EMIS',
         items: [{
                 label: 'New', 
                 icon: 'pi pi-fw pi-plus',
@@ -28,20 +28,39 @@ export class AppComponent {
         ]
     },
     {
-        label: 'Edit',
+        label: 'Home',
         icon: 'pi pi-fw pi-pencil',
         items: [
             {label: 'Delete', icon: 'pi pi-fw pi-trash'},
             {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
         ]
+    },
+    {
+        label: 'ITE',
+        icon: 'pi pi-fw pi-pencil'
+    },
+    {
+        label: 'IT Application',
+        icon: 'pi pi-fw pi-pencil',
+    },
+    {
+        label: 'AF System',
+        icon: 'pi pi-fw pi-pencil',
+    },
+    {
+        label: 'Special Projects',
+        icon: 'pi pi-fw pi-pencil',
+    },
+    {
+        label: 'Help',
+        icon: 'pi pi-fw pi-pencil',
     }
 ];
 this.tabitems = [
     {label: 'Home', icon: 'pi pi-fw pi-home'},
-    {label: 'Calendar', icon: 'pi pi-fw pi-calendar'},
-    {label: 'Edit', icon: 'pi pi-fw pi-pencil'},
-    {label: 'Documentation', icon: 'pi pi-fw pi-file'},
-    {label: 'Settings', icon: 'pi pi-fw pi-cog'}
+    {label: 'Site Admin', icon: 'pi pi-fw pi-calendar'},
+    {label: 'My Profile', icon: 'pi pi-fw pi-pencil'},
+    {label: 'Central Manager', icon: 'pi pi-fw pi-file'}
 ];
 
 }

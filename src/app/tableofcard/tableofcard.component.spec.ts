@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ResizableDraggableComponent } from './resizable-draggable.component';
+import { TableOfCardComponent } from './tableofcard.component';
 
 describe('ResizableDraggableComponent', () => {
-  let component: ResizableDraggableComponent;
-  let fixture: ComponentFixture<ResizableDraggableComponent>;
+  let component: TableOfCardComponent;
+  let fixture: ComponentFixture<TableOfCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResizableDraggableComponent ]
+      declarations: [ TableOfCardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ResizableDraggableComponent);
+    fixture = TestBed.createComponent(TableOfCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

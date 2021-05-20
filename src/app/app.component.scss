@@ -1,7 +1,7 @@
 .box-container {
     position: absolute;
     width: 80%;
-    height: 80%;
+    height: 75%;
     outline: 1px solid black;
     top: 50%;
     left: 50%;
@@ -18,4 +18,11 @@
         top: 50%;
         transform: translate3d(-100%, -50%, 0);
     }
+}
+::ng-deep .menucus{
+    background: #191b8fdc !important;
+    display: inline-block;
+}
+::ng-deep .menucusbar{
+    background: #c9b71b !important;
 }
