@@ -5,16 +5,18 @@ import {MenubarModule} from 'primeng/menubar';
 import {TabMenuModule} from 'primeng/tabmenu';
 import { TableOfCardComponent } from './/tableofcard/tableofcard.component';
 import { TableModule } from 'primeng/table';
+import { TableofgroupComponent } from './tableofgroup/tableofgroup.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TableOfCardComponent
+    TableOfCardComponent,
+    TableofgroupComponent
   ],
   imports: [
     BrowserModule,
     TableModule,
     MenubarModule,
-    TabMenuModule
+    TabMenuModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-<div #box class="tableofcard" 
+<div #box class="tableofgroup" 
     [style.width.px]="width" 
     [style.height.px]="height" 
     [style.transform]="'translate3d('+ left + 'px,' + top + 'px,' + '0px)'"
@@ -10,19 +10,19 @@
     <!--span>{{width | number:'1.0-0'}}px</span>
     <span>{{height | number:'1.0-0'}}px</span>
     <span>({{left}}, {{top}})</span>-->
-    <p-table [value]="cards">
+    <p-table [value]="groups">
         <ng-template pTemplate="header">
             <tr>
-                <th>Flight</th>
-                <th>From</th>
-                <th>To</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Details</th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-card>
+        <ng-template pTemplate="body" let-group>
             <tr>
-                <td>{{card.flightNumber}}</td>
-                <td>{{card.origin}}</td>
-                <td>{{card.destination}}</td>
+                <td>{{group.id}}</td>
+                <td>{{group.name}}</td>
+                <td>{{group.details}}</td>
             </tr>
         </ng-template>
     </p-table>
