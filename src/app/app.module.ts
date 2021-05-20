@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {MenubarModule} from 'primeng/menubar';
-import {MenuItem} from 'primeng/api';
+import {TabMenuModule} from 'primeng/tabmenu';
 import { ResizableDraggableComponent } from './resizable-draggable/resizable-draggable.component';
 import { TableModule } from 'primeng/table';
 @NgModule({
@@ -13,7 +13,8 @@ import { TableModule } from 'primeng/table';
   imports: [
     BrowserModule,
     TableModule,
-    MenubarModule
+    MenubarModule,
+    TabMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
