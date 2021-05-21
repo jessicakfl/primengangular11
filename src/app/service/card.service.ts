@@ -11,8 +11,9 @@ export class CardService {
     {"flightNumber" : "FS1201", "origin": "LAX", "destination" : "LHR"},
   ];
   private groups: Group[] = [
-    {"id" : "1", "name": "fadf", "details" : "asdfasdfaf"},
-    {"id" : "2", "name": "asdf", "details" : "afdasdf"},
+    {"id" : "1", "name": "fadf", "details" : "asdfasdfaf", "app": "asdf"},
+    {"id" : "2", "name": "asdf", "details" : "afdasdf", "app": "asdf"},
+    {"id" : "3", "name": "asdffddf", "details" : "sss", "app": "asdf"},
   ];
 
   constructor() { }
