@@ -25,8 +25,12 @@ export class TableOfCardComponent implements OnInit, AfterViewInit {
   public mouse: {x: number, y: number}
   public status: Status = Status.OFF;
   private mouseClick: {x: number, y: number, left: number, top: number}
+  cardtitle="";
 
-  ngOnInit() {this.cards = this.cardService.getCards();}
+  ngOnInit() {
+    this.cards = this.cardService.getCards();
+    this.cardtitle="Cards Table";
+  }
 
   ngAfterViewInit(){
     this.loadBox();

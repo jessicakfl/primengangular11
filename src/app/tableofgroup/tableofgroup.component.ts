@@ -26,8 +26,12 @@ export class TableofgroupComponent implements OnInit {
   public mouse: {x: number, y: number}
   public status: Status = Status.OFF;
   private mouseClick: {x: number, y: number, left: number, top: number}
+  grouptitle="";
 
-  ngOnInit() {this.groups = this.cardService.getGroups();}
+  ngOnInit() {
+    this.groups = this.cardService.getGroups();
+    this.grouptitle="Group Title";
+  }
 
   ngAfterViewInit(){
     this.loadBox();

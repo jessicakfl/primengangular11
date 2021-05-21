@@ -8,7 +8,7 @@ import {MenuItem} from 'primeng/api';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-resizable-draggable';
+  title = 'EMIS';
   items: MenuItem[];
   tabitems: MenuItem[];
   ngOnInit() {
