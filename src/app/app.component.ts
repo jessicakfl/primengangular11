@@ -56,6 +56,7 @@ export class AppComponent {
     {
         label: 'Help',
         icon: 'pi pi-fw pi-pencil',
+        'routerLink': ['help']
     }
 ];
 this.tabitems = [
