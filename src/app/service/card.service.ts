@@ -15,6 +15,7 @@ export class CardService {
     {"id" : "2", "name": "asdf", "details" : "afdasdf", "app": "asdf"},
     {"id" : "3", "name": "asdffddf", "details" : "sss", "app": "asdf"},
   ];
+  private width;
 
   constructor() { }
 
@@ -24,5 +25,12 @@ export class CardService {
 
   public getGroups() : Card[]{
     return this.groups;
+  }
+  setWidth(w:number){
+    this.width=w;
+  }
+  
+  getWidth(){
+    return this.width;
   }
 }

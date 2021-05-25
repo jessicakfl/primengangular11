@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, HostListener, Output, EventEmitter } from '@angular/core';
 import {Card} from '../model/card';
 import { CardService } from 'src/app/service/card.service';
 const enum Status {
@@ -19,6 +19,7 @@ export class TableOfCardComponent implements OnInit, AfterViewInit {
   @Input('left') public left: number;
   @Input('top') public top: number;
   @ViewChild("box") public box: ElementRef;
+  @Output() widthToP = new EventEmitter<number>();
   public cards : Card[];
   private boxPosition: { left: number, top: number };
   private containerPos: { left: number, top: number, right: number, bottom: number };
@@ -66,10 +67,11 @@ export class TableOfCardComponent implements OnInit, AfterViewInit {
   }
 
   private resize(){
-    if(this.resizeCondMeet()){
+    //if(this.resizeCondMeet()){
       this.width = Number(this.mouse.x > this.boxPosition.left) ? this.mouse.x - this.boxPosition.left : 0;
       this.height = Number(this.mouse.y > this.boxPosition.top) ? this.mouse.y - this.boxPosition.top : 0;
-    }
+      this.widthToP.emit(this.width);
+    //}
   }
 
   private resizeCondMeet(){

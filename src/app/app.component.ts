@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {MenubarModule} from 'primeng/menubar';
 import {MenuItem} from 'primeng/api';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +10,10 @@ export class AppComponent {
   title = 'EMIS';
   items: MenuItem[];
   tabitems: MenuItem[];
+  widthP:number=300;
+  width:number=0;
   ngOnInit() {
+
   this.items = [
     {
         label: 'EMIS',
@@ -64,5 +66,9 @@ this.tabitems = [
 ];
 
 }
+    getWidth(message: number) {
+        this.width = message;
+        console.log("@"+this.width);
+      }
 }
 

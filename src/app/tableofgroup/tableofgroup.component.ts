@@ -67,10 +67,10 @@ export class TableofgroupComponent implements OnInit {
   }
 
   private resize(){
-    if(this.resizeCondMeet()){
+    //if(this.resizeCondMeet()){
       this.width = Number(this.mouse.x > this.boxPosition.left) ? this.mouse.x - this.boxPosition.left : 0;
       this.height = Number(this.mouse.y > this.boxPosition.top) ? this.mouse.y - this.boxPosition.top : 0;
-    }
+    //}
   }
 
   private resizeCondMeet(){
