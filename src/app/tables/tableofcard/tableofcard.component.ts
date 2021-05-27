@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, HostListener, Output, EventEmitter } from '@angular/core';
-import {Card} from '../model/card';
+import {Card} from 'src/app/model/card';
 import { CardService } from 'src/app/service/card.service';
 const enum Status {
   OFF = 0,

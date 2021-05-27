@@ -7,69 +7,63 @@ import {MenuItem} from 'primeng/api';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'EMIS';
-  items: MenuItem[];
-  tabitems: MenuItem[];
-  widthP:number=300;
-  width:number=0;
-  ngOnInit() {
-
-  this.items = [
-    {
-        label: 'EMIS',
-        items: [{
-                label: 'New', 
-                icon: 'pi pi-fw pi-plus',
-                items: [
-                    {label: 'Project'},
-                    {label: 'Other'},
+    items: MenuItem[];
+    tabitems: MenuItem[];
+    title = 'EMIS';
+    constructor() { }
+    ngOnInit(): void {
+        this.items = [
+            {
+                label: 'EMIS',
+                'routerLink': ['table'],
+                items: [{
+                        label: 'New', 
+                        icon: 'pi pi-fw pi-plus',
+                        items: [
+                            {label: 'Project'},
+                            {label: 'Other'},
+                        ]
+                    },
+                    {label: 'Open'},
+                    {label: 'Quit'}
                 ]
             },
-            {label: 'Open'},
-            {label: 'Quit'}
-        ]
-    },
-    {
-        label: 'Home',
-        icon: 'pi pi-fw pi-pencil',
-        items: [
-            {label: 'Delete', icon: 'pi pi-fw pi-trash'},
-            {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
-        ]
-    },
-    {
-        label: 'ITE',
-        icon: 'pi pi-fw pi-pencil'
-    },
-    {
-        label: 'IT Application',
-        icon: 'pi pi-fw pi-pencil',
-    },
-    {
-        label: 'AF System',
-        icon: 'pi pi-fw pi-pencil',
-    },
-    {
-        label: 'Special Projects',
-        icon: 'pi pi-fw pi-pencil',
-    },
-    {
-        label: 'Help',
-        icon: 'pi pi-fw pi-pencil',
-        'routerLink': ['help']
-    }
-];
-this.tabitems = [
-    {label: 'Home', icon: 'pi pi-fw pi-home'},
-    {label: 'Site Admin', icon: 'pi pi-fw pi-calendar'},
-    {label: 'My Profile', icon: 'pi pi-fw pi-pencil'},
-    {label: 'Central Manager', icon: 'pi pi-fw pi-file'}
-];
-
-}
-    getWidth(message: number) {
-        this.width = message;
-        console.log("@"+this.width);
-      }
-}
+            {
+                label: 'Home',
+                icon: 'pi pi-fw pi-pencil',
+                items: [
+                    {label: 'Delete', icon: 'pi pi-fw pi-trash'},
+                    {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
+                ]
+            },
+            {
+                label: 'ITE',
+                icon: 'pi pi-fw pi-pencil'
+            },
+            {
+                label: 'IT Application',
+                icon: 'pi pi-fw pi-pencil',
+            },
+            {
+                label: 'AF System',
+                icon: 'pi pi-fw pi-pencil',
+            },
+            {
+                label: 'Special Projects',
+                icon: 'pi pi-fw pi-pencil',
+            },
+            {
+                label: 'Help',
+                icon: 'pi pi-fw pi-pencil',
+                'routerLink': ['help']
+            }
+        ];
+        this.tabitems = [
+            {label: 'Home', icon: 'pi pi-fw pi-home'},
+            {label: 'Site Admin', icon: 'pi pi-fw pi-calendar'},
+            {label: 'My Profile', icon: 'pi pi-fw pi-pencil'},
+            {label: 'Central Manager', icon: 'pi pi-fw pi-file'}
+        ];
+    } 
+    } 
 

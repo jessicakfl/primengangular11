@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
-import {Card} from '../model/card';
 import { CardService } from 'src/app/service/card.service';
-import { Group } from '../model/group';
+import { Group } from 'src/app/model/group';
 const enum Status {
   OFF = 0,
   RESIZE = 1,
