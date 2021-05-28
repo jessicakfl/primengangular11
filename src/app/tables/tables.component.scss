@@ -20,10 +20,18 @@
     }
 }
 ::ng-deep .menucus{
-    background: #191b8fdc !important;
-    display: inline-block;
+    background: darkblue !important;
     padding: auto !important;
+    display:inline-block;width: 100%;
+    padding: 2px;
+    color: lightgray;
+    border: 1px solid #000;
+    word-spacing:10px;
+    
 }
 ::ng-deep .menucusbar{
     background: orange !important;
+    display:inline-block;width: 100%;
+    word-spacing:10px;
+    padding: 2px;
 }
