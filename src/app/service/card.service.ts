@@ -14,6 +14,8 @@ export class CardService {
     {"id" : "1", "name": "fadf", "details" : "asdfasdfaf", "app": "asdf"},
     {"id" : "2", "name": "asdf", "details" : "afdasdf", "app": "asdf"},
     {"id" : "3", "name": "asdffddf", "details" : "sss", "app": "asdf"},
+    {"id" : "4", "name": "asdadff", "details" : "afdadfdfdsdf", "app": "asdf"},
+    {"id" : "5", "name": "asdffdfgfdf", "details" : "ssffs", "app": "asdf"},
   ];
   private width;
 
