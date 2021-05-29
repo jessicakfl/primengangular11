@@ -27,7 +27,16 @@
     color: lightgray;
     border: 1px solid #000;
     word-spacing:10px;
-    
+    :hover{
+        color: orange;
+    }
+    a:link {
+        color: orange;
+      }
+      
+      a:visited {
+        color: green;
+      }
 }
 ::ng-deep .menucusbar{
     background: orange !important;
