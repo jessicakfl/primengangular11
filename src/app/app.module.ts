@@ -9,20 +9,25 @@ import { TableofgroupComponent } from './tables/tableofgroup/tableofgroup.compon
 import { HelpComponent } from './help/help.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TablesComponent } from './tables/tables.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TableOfImageComponent } from './tables/table-of-image/table-of-image.component';
 @NgModule({
   declarations: [
     AppComponent,
     TableOfCardComponent,
     TableofgroupComponent,
     HelpComponent,
-    TablesComponent
+    TablesComponent,
+    TableOfImageComponent,
+    TableOfImageComponent
   ],
   imports: [
     BrowserModule,
     TableModule,
     MenubarModule,
     TabMenuModule,
-    AppRoutingModule  
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

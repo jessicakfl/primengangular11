@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, HostListener, Output, EventEmitter } from '@angular/core';
 import {Card} from 'src/app/model/card';
+import { Image } from 'src/app/model/image';
 import { CardService } from 'src/app/service/card.service';
 const enum Status {
   OFF = 0,
@@ -8,11 +9,12 @@ const enum Status {
 }
 
 @Component({
-  selector: 'tableofcard',
-  templateUrl: './tableofcard.component.html',
-  styleUrls: ['./tableofcard.component.scss']
+  selector: 'app-table-of-image',
+  templateUrl: './table-of-image.component.html',
+  styleUrls: ['./table-of-image.component.scss']
 })
-export class TableOfCardComponent implements OnInit, AfterViewInit {
+export class TableOfImageComponent implements OnInit, AfterViewInit {
+
   constructor(private cardService: CardService) {}
   @Input('width') public width: number;
   @Input('height') public height: number;
@@ -20,18 +22,16 @@ export class TableOfCardComponent implements OnInit, AfterViewInit {
   @Input('top') public top: number;
   @ViewChild("box") public box: ElementRef;
   @Output() widthToP = new EventEmitter<number>();
-  public cards : Card[];
   private boxPosition: { left: number, top: number };
   private containerPos: { left: number, top: number, right: number, bottom: number };
   public mouse: {x: number, y: number}
   public status: Status = Status.OFF;
   private mouseClick: {x: number, y: number, left: number, top: number}
   cardtitle="";
-  ImageList:any=[]; 
+  ImageList:Image=[]; 
 
   ngOnInit() {
-    this.cards = this.cardService.getCards();
-    this.cardtitle="Cards Table";
+    this.cardtitle="Image Table";
     this.refreshImageList();
   }
   
