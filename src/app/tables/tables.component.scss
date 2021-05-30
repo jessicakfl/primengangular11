@@ -19,7 +19,7 @@
         transform: translate3d(-100%, -50%, 0);
     }
 }
-::ng-deep .menucus{
+::ng-deep .menucusbar{
     background: darkblue !important;
     padding: auto !important;
     display:inline-block;width: 100%;
@@ -37,10 +37,16 @@
       a:visited {
         color: green;
       }
+      a:focus{
+        background-color: orange;
+    }
 }
-::ng-deep .menucusbar{
-    background: orange !important;
+::ng-deep .menucus{
+    background-color: orange !important;
     display:inline-block;width: 100%;
     word-spacing:10px;  
     padding: 2px;
+    a:focus{
+        background-color: green;
+    }
 }

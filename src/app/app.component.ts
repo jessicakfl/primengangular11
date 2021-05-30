@@ -34,7 +34,7 @@ export class AppComponent {
                 'routerLink': ['/'],
                 items: [
                     {label: 'Delete', icon: 'pi pi-fw pi-trash'},
-                    {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
+                    {label: 'Refresh', icon: 'pi pi-fw pi-refresh', 'routerLink': ['/help'],}
                 ]
             },
             {
