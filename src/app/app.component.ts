@@ -30,7 +30,7 @@ export class AppComponent {
             },
             {
                 label: 'Home',
-                icon: 'pi pi-fw pi-pencil',
+                icon: 'pi pi-fw pi-home',
                 'routerLink': ['/'],
                 items: [
                     {label: 'Delete', icon: 'pi pi-fw pi-trash'},
@@ -43,26 +43,26 @@ export class AppComponent {
             },
             {
                 label: 'IT Application',
-                icon: 'pi pi-fw pi-pencil',
+                icon: 'pi pi-fw pi-plus',
             },
             {
                 label: 'AF System',
-                icon: 'pi pi-fw pi-pencil',
+                icon: 'pi pi-fw pi-calendar',
             },
             {
                 label: 'Special Projects',
-                icon: 'pi pi-fw pi-pencil',
+                icon: 'pi pi-fw pi-file',
             },
             {
                 label: 'Help',
-                icon: 'pi pi-fw pi-pencil',
+                icon: 'pi pi-fw pi-cog',
                 'routerLink': ['help']
             }
         ];
         this.tabitems = [
-            {label: 'Home', icon: 'pi pi-fw pi-home', 'routerLink': ['table'],},
-            {label: 'Site Admin', icon: 'pi pi-fw pi-calendar'},
-            {label: 'My Profile', icon: 'pi pi-fw pi-pencil'},
+            {label: 'Home' , icon: 'pi pi-fw pi-home', 'routerLink': ['/table'],},
+            {label: 'Site Admin ', icon: 'pi pi-fw pi-calendar'},
+            {label: 'My Profile ', icon: 'pi pi-fw pi-pencil'},
             {label: 'Central Manager', icon: 'pi pi-fw pi-file', 'routerLink': ['/help'],}
         ];
     } 
