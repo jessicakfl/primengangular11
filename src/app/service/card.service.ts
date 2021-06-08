@@ -8,6 +8,7 @@ import {Observable} from 'rxjs';
 })
 export class CardService {
   readonly ApiUrl="https://localhost:5001/api/image/";
+  readonly ApiUrlConfigSettings="https://localhost:5001/api/configsettings/";
   readonly ImageUrl="https://localhost:5001/photos/";
   constructor(private http:HttpClient) { }
  
@@ -22,7 +23,7 @@ export class CardService {
     {"id" : "4", "name": "asdadff", "details" : "afdadfdfdsdf", "app": "asdf"},
     {"id" : "5", "name": "asdffdfgfdf", "details" : "ssffs", "app": "asdf"},
   ];
-  private width;
+  private width:number;
 
   public getCards() : Card[]{
     return this.cards;
@@ -31,14 +32,25 @@ export class CardService {
   public getGroups() : Card[]{
     return this.groups;
   }
-  setWidth(w:number){
+    setWidth(w:number){
     this.width=w;
   }
   
   getWidth(){
     return this.width;
   }
+
   getImageList():Observable<any[]>{
     return this.http.get<any>(this.ApiUrl);
   }
+
+getConfigSettings():Observable<any[]>{
+  return this.http.get<any>(this.ApiUrlConfigSettings);
 }
+
+setConfigSettings(cs:any){
+  return this.http.put(this.ApiUrlConfigSettings,cs);
+} 
+
+}
+  

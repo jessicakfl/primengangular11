@@ -29,6 +29,7 @@ export class TableOfImageComponent implements OnInit, AfterViewInit {
   private mouseClick: {x: number, y: number, left: number, top: number}
   cardtitle="";
   ImageList:Image=[]; 
+  msg:string="";
 
   ngOnInit() {
     this.cardtitle="Image Table";
@@ -78,6 +79,10 @@ export class TableOfImageComponent implements OnInit, AfterViewInit {
       this.width = Number(this.mouse.x > this.boxPosition.left) ? this.mouse.x - this.boxPosition.left : 0;
       this.height = Number(this.mouse.y > this.boxPosition.top) ? this.mouse.y - this.boxPosition.top : 0;
       this.widthToP.emit(this.width);
+      var val = {id:3, nw:this.width.toFixed(),nh:this.height.toFixed(),nt:this.top,nl:this.left};
+      this.cardService.setConfigSettings(val).subscribe(res=>{
+        this.msg=res.toString();
+      });
     //}
   }
 
@@ -89,6 +94,10 @@ export class TableOfImageComponent implements OnInit, AfterViewInit {
     //if(this.moveCondMeet()){
       this.left = this.mouseClick.left + (this.mouse.x - this.mouseClick.x);
       this.top = this.mouseClick.top + (this.mouse.y - this.mouseClick.y);
+      var val = {id:3, nw:this.width.toFixed(),nh:this.height.toFixed(),nt:this.top,nl:this.left};
+      this.cardService.setConfigSettings(val).subscribe(res=>{
+        this.msg=res.toString();
+      });
     ///}
   }
 

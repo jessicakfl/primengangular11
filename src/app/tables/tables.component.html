@@ -1,9 +1,8 @@
 <div class="box-container">
     <!-- <span>1000px</span>
     <span>600px</span> -->
-    <tableofcard [width]="widthP" (widthToP)="getWidth($event)" [height]="100" [left]="100" [top]="50"></tableofcard>
-    <tableofgroup [width]="320" [height]="220" [left]="410" [top]="-50"></tableofgroup>
-    <tableofcard [width]="300" [height]="100" [left]="740" [top]="-270"></tableofcard>
-    <tableofcard [width]="widthP" (widthToP)="getWidth($event)" [height]="100" [left]="100" [top]="-130"></tableofcard>
-    <app-table-of-image [width]="1000" [height]="135" [left]="100" [top]="-100"></app-table-of-image>
+     <!--<tableofcard [width]="300" (widthToP)="getWidth($event)" [height]="heightCard" [left]="leftCard" [top]="50"></tableofcard>-->
+    <tableofgroup [width]="widthGroup" [height]="heightGroup" [left]="leftGroup" [top]="topGroup"></tableofgroup>
+    <tableofcard [width]="widthCard" [height]="heightCard" [left]="leftCard" [top]="topCard"></tableofcard>
+    <app-table-of-image [width]="widthImage" [height]="heightImage" [left]="leftImage" [top]="topImage"></app-table-of-image>
   </div>
