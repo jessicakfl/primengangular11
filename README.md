@@ -1,5 +1,7 @@
 # Preimnganguar11
+
 features, menus, resize and move
+
 # basic structure
 
 /model, jsons
@@ -9,8 +11,10 @@ table.component, specify width, height, top and left on the grid
 
 
 # versions and addons
-anggular 11
+
+angular 11
 primeng
 
 # created
+
 jessicakfl jun 2020
