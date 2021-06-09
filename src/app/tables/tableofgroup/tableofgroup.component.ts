@@ -30,7 +30,7 @@ export class TableofgroupComponent implements OnInit {
 
   ngOnInit() {
     this.groups = this.cardService.getGroups();
-    this.grouptitle="Group Title";
+    this.grouptitle="Group Table";
   }
 
   ngAfterViewInit(){
