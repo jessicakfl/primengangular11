@@ -21,7 +21,6 @@ export class TableOfImageComponent implements OnInit, AfterViewInit {
   @Input('left') public left: number;
   @Input('top') public top: number;
   @ViewChild("box") public box: ElementRef;
-  @Output() widthToP = new EventEmitter<number>();
   private boxPosition: { left: number, top: number };
   private containerPos: { left: number, top: number, right: number, bottom: number };
   public mouse: {x: number, y: number}
@@ -78,7 +77,6 @@ export class TableOfImageComponent implements OnInit, AfterViewInit {
     //if(this.resizeCondMeet()){
       this.width = Number(this.mouse.x > this.boxPosition.left) ? this.mouse.x - this.boxPosition.left : 0;
       this.height = Number(this.mouse.y > this.boxPosition.top) ? this.mouse.y - this.boxPosition.top : 0;
-      this.widthToP.emit(this.width);
       var val = {id:3, nw:this.width.toFixed(),nh:this.height.toFixed(),nt:this.top,nl:this.left};
       this.cardService.setConfigSettings(val).subscribe(res=>{
         this.msg=res.toString();

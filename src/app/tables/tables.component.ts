@@ -9,21 +9,20 @@ import {CardService} from 'src/app/service/card.service';
 export class TablesComponent implements OnInit {
 
   constructor(private service:CardService) {}
-  // widthP:number=300;
-  widthCard:number=300;
-  heightCard:number=100;
-  topCard:number=0;
-  leftCard:number=50;
-  widthGroup:number=320;
-  heightGroup:number=220;
-  topGroup:number=-50;
-  leftGroup:number=410;
-  widthImage:number=1000;
-  heightImage:number=135;
-  topImage:number=-100;
-  leftImage:number=100;
-  
-  configList:any[];
+    widthCard:number=300;
+    heightCard:number=100;
+    topCard:number=0;
+    leftCard:number=50;
+    widthGroup:number=320;
+    heightGroup:number=220;
+    topGroup:number=-50;
+    leftGroup:number=410;
+    widthImage:number=1000;
+    heightImage:number=135;
+    topImage:number=-100;
+    leftImage:number=100;
+    configList:any[];
+    
   ngOnInit() {
     this.loadConfig();
   }

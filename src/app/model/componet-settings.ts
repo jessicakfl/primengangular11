@@ -4,11 +4,5 @@ export class ComponetSettings {
     nh: number;
     nt: number;
     nl: number;
-    id:number
-    // public getComponetName(){
-    //     return this.componentName;
-    // }
-    // public setComponetName(componentName: string){
-    //     this.componentName = componentName;
-    // }
+    id:number;
 }

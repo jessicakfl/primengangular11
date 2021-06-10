@@ -44,13 +44,13 @@ export class CardService {
     return this.http.get<any>(this.ApiUrl);
   }
 
-getConfigSettings():Observable<any[]>{
-  return this.http.get<any>(this.ApiUrlConfigSettings);
-}
+  getConfigSettings():Observable<any[]>{
+    return this.http.get<any>(this.ApiUrlConfigSettings);
+  }
 
-setConfigSettings(cs:any){
-  return this.http.put(this.ApiUrlConfigSettings,cs);
-} 
+  setConfigSettings(cs:any){
+    return this.http.put(this.ApiUrlConfigSettings,cs);
+  } 
 
 }
   
