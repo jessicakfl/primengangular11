@@ -11,18 +11,18 @@ export class TablesComponent implements OnInit {
   constructor(private service:CardService) {}
     widthCard:number=300;
     heightCard:number=100;
-    topCard:number=0;
-    leftCard:number=50;
+    topCard:number=-100;
+    leftCard:number=100;
     widthGroup:number=320;
     heightGroup:number=220;
-    topGroup:number=-50;
-    leftGroup:number=410;
+    topGroup:number=50;
+    leftGroup:number=440;
     widthImage:number=1000;
     heightImage:number=135;
-    topImage:number=-100;
+    topImage:number=50;
     leftImage:number=100;
     configList:any[];
-    
+
   ngOnInit() {
     this.loadConfig();
   }
