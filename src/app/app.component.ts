@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import {MenubarModule} from 'primeng/menubar';
-import {MenuItem} from 'primeng/api';
+import { MenubarModule } from 'primeng/menubar';
+import { MenuItem } from 'primeng/api';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
     items: MenuItem[];
@@ -17,15 +17,15 @@ export class AppComponent {
                 label: 'EMIS',
                 'routerLink': ['table'],
                 items: [{
-                        label: 'New', 
-                        icon: 'pi pi-fw pi-plus',
-                        items: [
-                            {label: 'Project'},
-                            {label: 'Other'},
-                        ]
-                    },
-                    {label: 'Open'},
-                    {label: 'Quit'}
+                    label: 'New',
+                    icon: 'pi pi-fw pi-plus',
+                    items: [
+                        { label: 'Project' },
+                        { label: 'Other' },
+                    ]
+                },
+                { label: 'Open' },
+                { label: 'Quit' }
                 ]
             },
             {
@@ -33,8 +33,8 @@ export class AppComponent {
                 icon: 'pi pi-fw pi-home',
                 'routerLink': ['/'],
                 items: [
-                    {label: 'Delete', icon: 'pi pi-fw pi-trash'},
-                    {label: 'Refresh', icon: 'pi pi-fw pi-refresh', 'routerLink': ['/help'],}
+                    { label: 'Delete', icon: 'pi pi-fw pi-trash' },
+                    { label: 'Refresh', icon: 'pi pi-fw pi-refresh', 'routerLink': ['/help'], }
                 ]
             },
             {
@@ -60,11 +60,11 @@ export class AppComponent {
             }
         ];
         this.tabitems = [
-            {label: 'Home' , icon: 'pi pi-fw pi-home', 'routerLink': ['/table'],},
-            {label: 'Site Admin ', icon: 'pi pi-fw pi-calendar'},
-            {label: 'My Profile ', icon: 'pi pi-fw pi-pencil'},
-            {label: 'Central Manager', icon: 'pi pi-fw pi-file', 'routerLink': ['/help'],}
+            { label: 'Home', icon: 'pi pi-fw pi-home', 'routerLink': ['/table'], },
+            { label: 'Site Admin ', icon: 'pi pi-fw pi-calendar' },
+            { label: 'My Profile ', icon: 'pi pi-fw pi-pencil' },
+            { label: 'Central Manager', icon: 'pi pi-fw pi-file', 'routerLink': ['/help'], }
         ];
-    } 
-    } 
+    }
+}
 
