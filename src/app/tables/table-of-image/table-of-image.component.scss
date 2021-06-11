@@ -39,9 +39,10 @@
         cursor: nwse-resize;
     }
 }
-// tr:nth-child(odd){
-//     background-color: lightblue;
-// }
+tr:nth-child(odd){
+    background-color: orange;
+}
+
 tr:nth-child(even) {
     background-color: lightblue;
 }
