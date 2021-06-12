@@ -8,7 +8,7 @@ describe('CardService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(CardService);
-    imports: [ HttpClientTestingModule ]
+    imports: [HttpClientTestingModule]
   });
   httpTestingController = TestBed.get(HttpTestingController);
   it('should be created', () => {
