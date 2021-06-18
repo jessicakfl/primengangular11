@@ -1,18 +1,16 @@
-<div #box class="tableofimage" 
-    [style.width.px]="width" 
-    [style.height.px]="height" 
+<div #box class="tableofimage" [style.width.px]="width" [style.height.px]="height"
     [style.transform]="'translate3d('+ left + 'px,' + top + 'px,' + '0px)'"
-    [class.active]="status === 1 || status === 2"
-    (mousedown)="setStatus($event, 2)"
-    (window:mouseup)="setStatus($event, 0)"
->
+    [class.active]="status === 1 || status === 2" (mousedown)="setStatus($event, 2)"
+    (window:mouseup)="setStatus($event, 0)">
     <div class="resize-action" (mousedown)="setStatus($event, 1)"></div>
     <!--<span>{{width | number:'1.0-0'}}px</span>
     <span>{{height | number:'1.0-0'}}px</span>
     <span>({{left}}, {{top}})</span>-->
-    <label class="col-sm-3 col-form-label" style="background-color: green; display:inline-block;width: 100%;">{{cardtitle}}</label>
-    <p-table [value]="ImageList">
-        <ng-template pTemplate="header"> 
+    <label class="col-sm-3 col-form-label"
+        style="background-color: green; display:inline-block;width: 100%;">{{cardtitle}}</label>
+    <p-table [value]="ImageList" [rows]="5" [resizableColumns]="true" columnResizeMode="expand" [paginator]="true"
+        [rowsPerPageOptions]="[10,15,20,25]">
+        <ng-template pTemplate="header">
             <tr style="text-align:left">
                 <th>Id</th>
                 <th>Name</th>
@@ -23,7 +21,9 @@
             <tr>
                 <td>{{image.id}}</td>
                 <td>{{image.name}}</td>
-                <td><div style = "width:330px; word-wrap: break-word"> {{image.photofilepath}}</div></td>
+                <td>
+                    <div style="width:330px; word-wrap: break-word"> {{image.photofilepath}}</div>
+                </td>
             </tr>
         </ng-template>
     </p-table>
