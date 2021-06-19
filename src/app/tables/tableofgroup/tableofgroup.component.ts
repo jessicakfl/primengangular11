@@ -18,6 +18,10 @@ export class TableofgroupComponent implements OnInit {
   @Input('height') public height: number;
   @Input('left') public left: number;
   @Input('top') public top: number;
+  @Input('gwidth') public gwidth: number;
+  @Input('gheight') public gheight: number;
+  @Input('gleft') public lgeft: number;
+  @Input('gtop') public gtop: number;
   @ViewChild("box") public box: ElementRef;
   public groups: Group[];
   private boxPosition: { left: number, top: number };
@@ -40,7 +44,15 @@ export class TableofgroupComponent implements OnInit {
 
   private loadBox() {
     const { left, top } = this.box.nativeElement.getBoundingClientRect();
+    if (!this.moveCond()) {
+      this.top = this.gtop+10;
+      // this.left = this.gleft;
+    }
     this.boxPosition = { left, top };
+    var val = { id: 2, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left };
+    this.cardService.setConfigSettings(val).subscribe(res => {
+      this.msg = res.toString();
+    });
   }
 
   private loadContainer() {
@@ -70,13 +82,24 @@ export class TableofgroupComponent implements OnInit {
     //if(this.resizeCondMeet()){
     this.width = Number(this.mouse.x > this.boxPosition.left) ? this.mouse.x - this.boxPosition.left : 0;
     this.height = Number(this.mouse.y > this.boxPosition.top) ? this.mouse.y - this.boxPosition.top : 0;
-    var val = { id: 2, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left };
-    this.cardService.setConfigSettings(val).subscribe(res => {
-      this.msg = res.toString();
-    });
-    //}
   }
-
+  private moveCond() {
+    //     if (this.topRight.getY() < other.bottomLeft.getY() 
+    //       || this.bottomLeft.getY() > other.topRight.getY()) {
+    //         return false;
+    //     }
+    //     if (this.topRight.getX() < other.bottomLeft.getX() 
+    //       || this.bottomLeft.getX() > other.topRight.getX()) {
+    //         return false;
+    //     }
+    //     return true;
+    // if (this.top < this.gtop && (this.top+this.height>this.gtop+this.gheight()||top){return false};
+    if (this.top > this.gtop && this.top + this.height < this.gtop + this.gheight) { return false; }
+    else if (this.top < this.gtop && this.top + this.height > this.gtop + this.gheight) { return false; }
+    // if (this.left + this.width < this.gleft ||
+    //   this.left > this.gleft + this.gwidth) { return false }
+    else { return true; }
+  }
   private resizeCondMeet() {
     return (this.mouse.x < this.containerPos.right && this.mouse.y < this.containerPos.bottom);
   }

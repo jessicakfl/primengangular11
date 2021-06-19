@@ -2,7 +2,8 @@
     <!-- <span>1000px</span>
     <span>600px</span> -->
      <!--<tableofcard [width]="300" (widthToP)="getWidth($event)" [height]="heightCard" [left]="leftCard" [top]="50"></tableofcard>-->
-  <tableofgroup [width]="widthGroup" [height]="heightGroup" [left]="leftGroup" [top]="topGroup"></tableofgroup>
-  <tableofcard [width]="widthCard" [height]="heightCard" [left]="leftCard" [top]="topCard"></tableofcard>
+     <tableofcard [width]="widthCard" [height]="heightCard" [left]="leftCard" [top]="topCard"></tableofcard>
+     <tableofgroup [width]="widthGroup" [height]="heightGroup" [left]="leftGroup" [top]="topGroup" [gwidth]="widthCard" 
+  [gheight]="heightCard" [gleft]="leftCard" [gtop]="topCard"></tableofgroup>
   <app-table-of-image [width]="widthImage" [height]="heightImage" [left]="leftImage" [top]="topImage"></app-table-of-image>
 </div>
