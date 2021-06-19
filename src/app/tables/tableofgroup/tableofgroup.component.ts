@@ -20,7 +20,7 @@ export class TableofgroupComponent implements OnInit {
   @Input('top') public top: number;
   @Input('gwidth') public gwidth: number;
   @Input('gheight') public gheight: number;
-  @Input('gleft') public lgeft: number;
+  @Input('gleft') public gleft: number;
   @Input('gtop') public gtop: number;
   @ViewChild("box") public box: ElementRef;
   public groups: Group[];
@@ -42,12 +42,20 @@ export class TableofgroupComponent implements OnInit {
     this.loadContainer();
   }
 
+  private moveCond() {
+    if (this.top > this.gtop && this.top + this.height < this.gtop + this.gheight
+      ) { return false; }
+    else if (this.top < this.gtop && this.top + this.height > this.gtop + this.gheight
+     ) { return false; }
+    else { return true; }
+  }
+
   private loadBox() {
-    const { left, top } = this.box.nativeElement.getBoundingClientRect();
-    if (!this.moveCond()) {
-      this.top = this.gtop + 10;
+    if (this.moveCond()) {
+      this.top = this.top+this.gtop;
       // this.left = this.gleft;
     }
+    const { left, top } = this.box.nativeElement.getBoundingClientRect();
     this.boxPosition = { left, top };
     var val = { id: 2, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left };
     this.cardService.setConfigSettings(val).subscribe(res => {
@@ -83,11 +91,7 @@ export class TableofgroupComponent implements OnInit {
     this.width = Number(this.mouse.x > this.boxPosition.left) ? this.mouse.x - this.boxPosition.left : 0;
     this.height = Number(this.mouse.y > this.boxPosition.top) ? this.mouse.y - this.boxPosition.top : 0;
   }
-  private moveCond() {
-    if (this.top > this.gtop && this.top + this.height < this.gtop + this.gheight) { return false; }
-    else if (this.top < this.gtop && this.top + this.height > this.gtop + this.gheight) { return false; }
-    else { return true; }
-  }
+  
   private resizeCondMeet() {
     return (this.mouse.x < this.containerPos.right && this.mouse.y < this.containerPos.bottom);
   }
