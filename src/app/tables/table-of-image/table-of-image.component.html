@@ -8,7 +8,7 @@
     <span>({{left}}, {{top}})</span>-->
     <label class="col-sm-3 col-form-label"
         style="background-color: green; display:inline-block;width: 100%;">{{cardtitle}}</label>
-    <p-table [value]="ImageList" [style]="{'width':'100%','overflow':'auto!important'}" [responsive]="true" [rows]="5" [resizableColumns]="true" columnResizeMode="expand"
+    <p-table [value]="ImageList" appendTo="body" [style]="{'width':'100%','overflow':'auto!important'}" [responsive]="true" [rows]="5" [resizableColumns]="true" columnResizeMode="expand"
         [paginator]="true" [rowsPerPageOptions]="[10,15,20,25]">
         <ng-template pTemplate="header">
             <tr style="text-align:left">

@@ -43,16 +43,16 @@ export class TableofgroupComponent implements OnInit {
   }
 
   private moveCond() {
-    if (this.top > this.gtop && this.top + this.height < this.gtop + this.gheight
-      ) { return false; }
-    else if (this.top < this.gtop && this.top + this.height > this.gtop + this.gheight
-     ) { return false; }
+    if (this.top >= this.gtop && this.top + this.height <= this.gtop + this.gheight
+    ) { return false; }
+    else if (this.top <= this.gtop && this.top + this.height >= this.gtop + this.gheight
+    ) { return false; }
     else { return true; }
   }
 
   private loadBox() {
-    if (this.moveCond()) {
-      this.top = this.top+this.gtop;
+    if (!this.moveCond()) {
+      this.top = this.top + this.gtop;
       // this.left = this.gleft;
     }
     const { left, top } = this.box.nativeElement.getBoundingClientRect();
@@ -91,7 +91,7 @@ export class TableofgroupComponent implements OnInit {
     this.width = Number(this.mouse.x > this.boxPosition.left) ? this.mouse.x - this.boxPosition.left : 0;
     this.height = Number(this.mouse.y > this.boxPosition.top) ? this.mouse.y - this.boxPosition.top : 0;
   }
-  
+
   private resizeCondMeet() {
     return (this.mouse.x < this.containerPos.right && this.mouse.y < this.containerPos.bottom);
   }
