@@ -45,7 +45,7 @@ export class TableofgroupComponent implements OnInit {
   private loadBox() {
     const { left, top } = this.box.nativeElement.getBoundingClientRect();
     if (!this.moveCond()) {
-      this.top = this.gtop+10;
+      this.top = this.gtop + 10;
       // this.left = this.gleft;
     }
     this.boxPosition = { left, top };
@@ -84,20 +84,8 @@ export class TableofgroupComponent implements OnInit {
     this.height = Number(this.mouse.y > this.boxPosition.top) ? this.mouse.y - this.boxPosition.top : 0;
   }
   private moveCond() {
-    //     if (this.topRight.getY() < other.bottomLeft.getY() 
-    //       || this.bottomLeft.getY() > other.topRight.getY()) {
-    //         return false;
-    //     }
-    //     if (this.topRight.getX() < other.bottomLeft.getX() 
-    //       || this.bottomLeft.getX() > other.topRight.getX()) {
-    //         return false;
-    //     }
-    //     return true;
-    // if (this.top < this.gtop && (this.top+this.height>this.gtop+this.gheight()||top){return false};
     if (this.top > this.gtop && this.top + this.height < this.gtop + this.gheight) { return false; }
     else if (this.top < this.gtop && this.top + this.height > this.gtop + this.gheight) { return false; }
-    // if (this.left + this.width < this.gleft ||
-    //   this.left > this.gleft + this.gwidth) { return false }
     else { return true; }
   }
   private resizeCondMeet() {
