@@ -8,46 +8,47 @@
     <span>({{left}}, {{top}})</span>-->
     <label class="col-sm-3 col-form-label"
         style="background-color: green; display:inline-block;width: 100%;">{{cardtitle}}</label>
-        <div  *ngIf="!ifimagepaging">
-    <p-table [value]="ImageList" appendTo="body" [style]="{'width':'100%','overflow':'auto!important'}" [responsive]="true" [rows]="5" [resizableColumns]="true" columnResizeMode="expand"
-        [paginator]="true" [rowsPerPageOptions]="[10,15,20,25]">
-        <ng-template pTemplate="header">
-            <tr style="text-align:left">
-                <th>Id</th>
-                <th>Name</th>
-                <th>Image</th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-image>
-            <tr>
-                <td>{{image.id}}</td>
-                <td>{{image.name}}</td>
-                <td>
-                    <div style="width:330px; word-wrap: break-word"> {{image.photofilepath}}</div>
-                </td>
-            </tr>
-        </ng-template>
-    </p-table>
-    </div>
     <div *ngIf="ifimagepaging">
-        <p-table [value]="ImageList" appendTo="body" [style]="{'width':'100%','overflow':'auto!important'}" 
-        [responsive]="true">
-        <ng-template pTemplate="header">
-            <tr style="text-align:left">
-                <th>Id</th>
-                <th>Name</th>
-                <th>Image</th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-image>
-            <tr>
-                <td>{{image.id}}</td>
-                <td>{{image.name}}</td>
-                <td>
-                    <div style="width:330px; word-wrap: break-word"> {{image.photofilepath}}</div>
-                </td>
-            </tr>
-        </ng-template>
-    </p-table>
+        <p-table [value]="ImageList" appendTo="body" [style]="{'width':'100%','overflow':'auto!important'}"
+            [responsive]="true" [rows]="5" [resizableColumns]="true" columnResizeMode="expand" [paginator]="true"
+            [rowsPerPageOptions]="[10,15,20,25]">
+            <ng-template pTemplate="header">
+                <tr style="text-align:left">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-image>
+                <tr>
+                    <td>{{image.id}}</td>
+                    <td>{{image.name}}</td>
+                    <td>
+                        <div style="width:330px; word-wrap: break-word"> {{image.photofilepath}}</div>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <div *ngIf="!ifimagepaging">
+        <p-table [value]="ImageList" appendTo="body" [style]="{'width':'100%','overflow':'auto!important'}"
+            [responsive]="true">
+            <ng-template pTemplate="header">
+                <tr style="text-align:left">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-image>
+                <tr>
+                    <td>{{image.id}}</td>
+                    <td>{{image.name}}</td>
+                    <td>
+                        <div style="width:330px; word-wrap: break-word"> {{image.photofilepath}}</div>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
     </div>
 </div>
