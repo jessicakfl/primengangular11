@@ -11,6 +11,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { TablesComponent } from './tables/tables.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TableOfImageComponent } from './tables/table-of-image/table-of-image.component';
+import { SiteadminComponent } from './siteadmin/siteadmin.component';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,11 +22,15 @@ import { TableOfImageComponent } from './tables/table-of-image/table-of-image.co
     HelpComponent,
     TablesComponent,
     TableOfImageComponent,
-    TableOfImageComponent
+    TableOfImageComponent,
+    SiteadminComponent
   ],
   imports: [
     BrowserModule,
     TableModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
     MenubarModule,
     TabMenuModule,
     AppRoutingModule,

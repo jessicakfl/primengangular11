@@ -29,6 +29,7 @@ export class TableOfImageComponent implements OnInit, AfterViewInit {
   cardtitle = "";
   ImageList: Image = [];
   msg: string = "";
+  ifimagepaging = false;
 
   ngOnInit() {
     this.cardtitle = "Image Table";
