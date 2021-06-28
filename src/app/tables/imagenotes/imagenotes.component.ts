@@ -1,8 +1,8 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, HostListener, Output, EventEmitter } from '@angular/core';
-import { Card } from 'src/app/model/card';
-import { Configsettings } from 'src/app/model/configsettings';
-import { Image } from 'src/app/model/image';
+import { AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
+import { Imagenote } from 'src/app/model/imagenote';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CardService } from 'src/app/service/card.service';
+import { Image } from 'src/app/model/image';
 const enum Status {
   OFF = 0,
   RESIZE = 1,
@@ -10,41 +10,49 @@ const enum Status {
 }
 
 @Component({
-  selector: 'app-table-of-image',
-  templateUrl: './table-of-image.component.html',
-  styleUrls: ['./table-of-image.component.scss']
+  selector: 'app-imagenotes',
+  templateUrl: './imagenotes.component.html',
+  styleUrls: ['./imagenotes.component.scss']
 })
-export class TableOfImageComponent implements OnInit, AfterViewInit {
+export class ImagenotesComponent implements OnInit, AfterViewInit {
+  cardtitle = "";
+  constructor(private _Activedroute: ActivatedRoute,
+    private _router: Router,
+    private cardService: CardService) {
+  }
 
-  constructor(private cardService: CardService) { }
+  ngOnInit(): void {
+    this.cardtitle = "Image Notes";
+    this.refreshImageNoteList();
+
+  }
   @Input('width') public width: number;
   @Input('height') public height: number;
   @Input('left') public left: number;
   @Input('top') public top: number;
-  @Input('ifimagepaging') public ifimagepaging: boolean;
   @ViewChild("box") public box: ElementRef;
   private boxPosition: { left: number, top: number };
   private containerPos: { left: number, top: number, right: number, bottom: number };
   public mouse: { x: number, y: number }
   public status: Status = Status.OFF;
   private mouseClick: { x: number, y: number, left: number, top: number }
-  cardtitle = "";
-  ImageList: Image = [];
+  ImageNoteList: any = [];
   msg: string = "";
-
-  ngOnInit() {
-    this.cardtitle = "Image Table";
-    this.refreshImageList();
-    // this.cardService.getIfImagePaging(3).subscribe((data: boolean) => {
-    //   this.ifimagepaging = data;
-    // })
-  }
-
-  refreshImageList() {
-    this.cardService.getImageList().subscribe((data: any) => {
-      this.ImageList = data;
+  ifimagepaging = true;
+  sub: any;
+  id: any;
+  imagenote: Imagenote;
+  image: Image;
+  refreshImageNoteList() {
+    this.sub = this._Activedroute.paramMap.subscribe(params => {
+      this.id = params.get('id');
+      this.cardService.getImageNotesList().subscribe((data: any) => {
+        this.ImageNoteList = data;
+        this.imagenote = this.ImageNoteList.find(x => x.id == this.id);
+      });
     })
   }
+
   ngAfterViewInit() {
     this.loadBox();
     this.loadContainer();
@@ -83,9 +91,9 @@ export class TableOfImageComponent implements OnInit, AfterViewInit {
     this.width = Number(this.mouse.x > this.boxPosition.left) ? this.mouse.x - this.boxPosition.left : 0;
     this.height = Number(this.mouse.y > this.boxPosition.top) ? this.mouse.y - this.boxPosition.top : 0;
     var val = { id: 3, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left };
-    // this.cardService.setConfigSettings(val).subscribe(res => {
-    //   this.msg = res.toString();
-    // });
+    this.cardService.setConfigSettings(val).subscribe(res => {
+      this.msg = res.toString();
+    });
     //}
   }
 
@@ -98,9 +106,9 @@ export class TableOfImageComponent implements OnInit, AfterViewInit {
     this.left = this.mouseClick.left + (this.mouse.x - this.mouseClick.x);
     this.top = this.mouseClick.top + (this.mouse.y - this.mouseClick.y);
     var val = { id: 3, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left };
-    // this.cardService.setConfigSettings(val).subscribe(res => {
-    //   this.msg = res.toString();
-    // });
+    this.cardService.setConfigSettings(val).subscribe(res => {
+      this.msg = res.toString();
+    });
     ///}
   }
 
@@ -116,4 +124,5 @@ export class TableOfImageComponent implements OnInit, AfterViewInit {
       this.mouse.y < this.containerPos.bottom - offsetBottom
     );
   }
+
 }

@@ -14,6 +14,9 @@ import { TableOfImageComponent } from './tables/table-of-image/table-of-image.co
 import { SiteadminComponent } from './siteadmin/siteadmin.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ImagedirectionsComponent } from './tables/imagedirections/imagedirections.component';
+import { ImagenotesComponent } from './tables/imagenotes/imagenotes.component';
+import { SubtablesComponent } from './tables/subtables/subtables.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TablesComponent,
     TableOfImageComponent,
     TableOfImageComponent,
-    SiteadminComponent
+    SiteadminComponent,
+    ImagedirectionsComponent,
+    ImagenotesComponent,
+    SubtablesComponent
   ],
   imports: [
     BrowserModule,

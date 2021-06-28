@@ -16,12 +16,14 @@ export class TablesComponent implements OnInit {
   widthGroup: number = 320;
   heightGroup: number = 220;
   topGroup: number = 50;
-  leftGroup: number = 440;
+  leftGroup: number = 100;
   widthImage: number = 1000;
   heightImage: number = 135;
   topImage: number = 50;
   leftImage: number = 100;
+  ifimagepaging:boolean;
   configList: any[];
+  ifsubtable=false;
 
   ngOnInit() {
     this.loadConfig();
@@ -48,6 +50,7 @@ export class TablesComponent implements OnInit {
           this.heightImage = config.nh;
           this.topImage = config.nt;
           this.leftImage = config.nl;
+          this.ifimagepaging = config.ifpaging;
         }
       });
     })

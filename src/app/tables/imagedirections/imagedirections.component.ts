@@ -1,48 +1,43 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, HostListener, Output, EventEmitter } from '@angular/core';
-import { Card } from 'src/app/model/card';
-import { Configsettings } from 'src/app/model/configsettings';
-import { Image } from 'src/app/model/image';
+import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
+import { Imagedirection } from 'src/app/model/imagedirection';
+import { Imagenote } from 'src/app/model/imagenote';
 import { CardService } from 'src/app/service/card.service';
 const enum Status {
   OFF = 0,
   RESIZE = 1,
   MOVE = 2
 }
-
 @Component({
-  selector: 'app-table-of-image',
-  templateUrl: './table-of-image.component.html',
-  styleUrls: ['./table-of-image.component.scss']
+  selector: 'app-imagedirections',
+  templateUrl: './imagedirections.component.html',
+  styleUrls: ['./imagedirections.component.scss']
 })
-export class TableOfImageComponent implements OnInit, AfterViewInit {
+export class ImagedirectionsComponent implements OnInit {
+  cardtitle = "";
 
+  ngOnInit(): void {
+    this.cardtitle = "Image Directions";
+    this.refreshImageDirectionsList();
+  }
   constructor(private cardService: CardService) { }
+
   @Input('width') public width: number;
   @Input('height') public height: number;
   @Input('left') public left: number;
   @Input('top') public top: number;
-  @Input('ifimagepaging') public ifimagepaging: boolean;
   @ViewChild("box") public box: ElementRef;
   private boxPosition: { left: number, top: number };
   private containerPos: { left: number, top: number, right: number, bottom: number };
   public mouse: { x: number, y: number }
   public status: Status = Status.OFF;
   private mouseClick: { x: number, y: number, left: number, top: number }
-  cardtitle = "";
-  ImageList: Image = [];
+  ImageDirectionList: Imagedirection = [];
   msg: string = "";
+  ifimagepaging = true;
 
-  ngOnInit() {
-    this.cardtitle = "Image Table";
-    this.refreshImageList();
-    // this.cardService.getIfImagePaging(3).subscribe((data: boolean) => {
-    //   this.ifimagepaging = data;
-    // })
-  }
-
-  refreshImageList() {
-    this.cardService.getImageList().subscribe((data: any) => {
-      this.ImageList = data;
+  refreshImageDirectionsList() {
+    this.cardService.getImageDirectionList().subscribe(data => {
+      this.ImageDirectionList = data;
     })
   }
   ngAfterViewInit() {
@@ -83,9 +78,9 @@ export class TableOfImageComponent implements OnInit, AfterViewInit {
     this.width = Number(this.mouse.x > this.boxPosition.left) ? this.mouse.x - this.boxPosition.left : 0;
     this.height = Number(this.mouse.y > this.boxPosition.top) ? this.mouse.y - this.boxPosition.top : 0;
     var val = { id: 3, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left };
-    // this.cardService.setConfigSettings(val).subscribe(res => {
-    //   this.msg = res.toString();
-    // });
+    this.cardService.setConfigSettings(val).subscribe(res => {
+      this.msg = res.toString();
+    });
     //}
   }
 
@@ -98,9 +93,9 @@ export class TableOfImageComponent implements OnInit, AfterViewInit {
     this.left = this.mouseClick.left + (this.mouse.x - this.mouseClick.x);
     this.top = this.mouseClick.top + (this.mouse.y - this.mouseClick.y);
     var val = { id: 3, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left };
-    // this.cardService.setConfigSettings(val).subscribe(res => {
-    //   this.msg = res.toString();
-    // });
+    this.cardService.setConfigSettings(val).subscribe(res => {
+      this.msg = res.toString();
+    });
     ///}
   }
 
@@ -116,4 +111,5 @@ export class TableOfImageComponent implements OnInit, AfterViewInit {
       this.mouse.y < this.containerPos.bottom - offsetBottom
     );
   }
+
 }
