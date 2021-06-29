@@ -21,9 +21,9 @@ export class TablesComponent implements OnInit {
   heightImage: number = 135;
   topImage: number = 50;
   leftImage: number = 100;
-  ifimagepaging:boolean;
+  ifimagepaging: boolean;
   configList: any[];
-  ifsubtable=false;
+  ifsubtable = false;
 
   ngOnInit() {
     this.loadConfig();

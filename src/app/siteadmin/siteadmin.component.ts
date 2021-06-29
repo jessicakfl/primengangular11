@@ -11,9 +11,9 @@ import { CardService } from '../service/card.service';
 })
 
 export class SiteadminComponent implements OnInit {
-  ifimagepaging = true;
-  ifdirectionpaging = true;
-  ifnotepaging = true;
+  ifimagepaging:boolean;
+  ifdirectionpaging:boolean;
+  ifnotepaging:boolean;
   msg: String = "";
   constructor(private cardService: CardService) { }
   widthDirection: number = 300;
