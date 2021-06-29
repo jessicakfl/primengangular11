@@ -51,9 +51,10 @@ export class ImagenotesComponent implements OnInit, AfterViewInit {
   refreshImageNoteList() {
     this.sub = this._Activedroute.paramMap.subscribe(params => {
       this.id = params.get('id');
-      this.cardService.getImageNotesList().subscribe((data: any) => {
+      console.log("##"+this.id);
+      this.cardService.getImageNotesByImageId(this.id).subscribe((data: any) => {
         this.ImageNoteList = data;
-        this.imagenote = this.ImageNoteList.find(x => x.id == this.id);
+        // this.imagenote = this.ImageNoteList.find(x => x.id == this.id);
       });
     })
   }

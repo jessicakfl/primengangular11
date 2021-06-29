@@ -2,6 +2,7 @@ import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@
 import { Imagedirection } from 'src/app/model/imagedirection';
 import { Imagenote } from 'src/app/model/imagenote';
 import { CardService } from 'src/app/service/card.service';
+import { ActivatedRoute, Router } from '@angular/router';
 const enum Status {
   OFF = 0,
   RESIZE = 1,
@@ -15,7 +16,8 @@ const enum Status {
 export class ImagedirectionsComponent implements OnInit {
   cardtitle = "";
 
-  constructor(private cardService: CardService) { }
+  constructor(private _Activedroute: ActivatedRoute,
+    private _router: Router, private cardService: CardService) { }
 
   @Input('widthDirection') public width: number;
   @Input('heightDirection') public height: number;
@@ -29,9 +31,10 @@ export class ImagedirectionsComponent implements OnInit {
   public status: Status = Status.OFF;
   private mouseClick: { x: number, y: number, left: number, top: number }
   ImageDirectionList: Imagedirection = [];
-  msg: string = "";
   ifimagepaging = true;
-
+  msg: string = "";
+  sub: any;
+  id: any;
   ngOnInit(): void {
     this.cardtitle = "Image Directions";
     this.refreshImageDirectionsList();
@@ -39,12 +42,23 @@ export class ImagedirectionsComponent implements OnInit {
       this.ifdiretionpaging = data;
     })
   }
-
+  
+  // this.sub = this._Activedroute.paramMap.subscribe(params => {
+  //   this.id = params.get('id');
+  //   console.log("##"+this.id);
+  //   this.cardService.getImageNotesByImageId(this.id).subscribe((data: any) => {
+  //     this.ImageNoteList = data;
+  //     // this.imagenote = this.ImageNoteList.find(x => x.id == this.id);
+  //   });
+  // })
   refreshImageDirectionsList() {
-    this.cardService.getImageDirectionList().subscribe(data => {
+      this.sub = this._Activedroute.paramMap.subscribe(params => {
+    this.id = params.get('id');
+    this.cardService.getImageDirectionssByImageId(this.id).subscribe(data => {
       this.ImageDirectionList = data;
-    })
-  }
+    });
+  })
+}
   ngAfterViewInit() {
     this.loadBox();
     this.loadContainer();
