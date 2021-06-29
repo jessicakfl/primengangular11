@@ -14,6 +14,7 @@ const enum Status {
   templateUrl: './imagenotes.component.html',
   styleUrls: ['./imagenotes.component.scss']
 })
+
 export class ImagenotesComponent implements OnInit, AfterViewInit {
   cardtitle = "";
   constructor(private _Activedroute: ActivatedRoute,
@@ -21,16 +22,12 @@ export class ImagenotesComponent implements OnInit, AfterViewInit {
     private cardService: CardService) {
   }
 
-  ngOnInit(): void {
-    this.cardtitle = "Image Notes";
-    this.refreshImageNoteList();
-
-  }
-  @Input('width') public width: number;
-  @Input('height') public height: number;
-  @Input('left') public left: number;
-  @Input('top') public top: number;
+  @Input('widthNote') public width: number;
+  @Input('heightNote') public height: number;
+  @Input('leftNote') public left: number;
+  @Input('topNote') public top: number;
   @ViewChild("box") public box: ElementRef;
+  @Input('ifnotepaging') public ifnotepaging: boolean;
   private boxPosition: { left: number, top: number };
   private containerPos: { left: number, top: number, right: number, bottom: number };
   public mouse: { x: number, y: number }
@@ -38,11 +35,19 @@ export class ImagenotesComponent implements OnInit, AfterViewInit {
   private mouseClick: { x: number, y: number, left: number, top: number }
   ImageNoteList: any = [];
   msg: string = "";
-  ifimagepaging = true;
   sub: any;
   id: any;
   imagenote: Imagenote;
   image: Image;
+
+  ngOnInit(): void {
+    this.cardtitle = "Image Notes";
+    this.refreshImageNoteList();
+    this.cardService.getIfImagePaging(4).subscribe((data: boolean) => {
+      this.ifnotepaging = data;
+    })
+  }
+
   refreshImageNoteList() {
     this.sub = this._Activedroute.paramMap.subscribe(params => {
       this.id = params.get('id');

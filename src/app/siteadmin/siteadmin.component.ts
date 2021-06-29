@@ -12,26 +12,66 @@ import { CardService } from '../service/card.service';
 
 export class SiteadminComponent implements OnInit {
   ifimagepaging = true;
-  msg:String="";
+  ifdirectionpaging = true;
+  ifnotepaging = true;
+  msg: String = "";
   constructor(private cardService: CardService) { }
+  widthDirection: number = 300;
+  heightDirection: number = 100;
+  topDirection: number = -100;
+  leftDirection: number = 100;
+  widthNote: number = 320;
+  heightNote: number = 220;
+  topNote: number = 50;
+  leftNote: number = 100;
   widthImage: number = 1000;
   heightImage: number = 135;
   topImage: number = 50;
   leftImage: number = 100;
+
+  // widthImage: number = 1000;
+  // heightImage: number = 135;
+  // topImage: number = 50;
+  // leftImage: number = 100;
   configList: any[];
-  ifsubtable=false;
+  ifsubtable = false;
   ngOnInit(): void {
     this.loadConfig();
   }
 
   onSaveIfImagePaging(val: boolean) {
-    console.log("##" + val);
     this.ifimagepaging = val;
-    var cs = { id: 3, nw: this.widthImage.toFixed(), nh: this.heightImage.toFixed(), 
-      nt: this.topImage, nl: this.leftImage , ifpaging:this.ifimagepaging};
+    var cs = {
+      id: 3, nw: this.widthImage.toFixed(), nh: this.heightImage.toFixed(),
+      nt: this.topImage, nl: this.leftImage, ifpaging: this.ifimagepaging
+    };
     this.cardService.setConfigSettings(cs).subscribe(res => {
       this.msg = res.toString();
-      console.log("$$"+this.msg);
+      console.log("$$" + this.msg);
+    });
+  }
+
+  onSaveIfImageDirectionPaging(val: boolean) {
+    this.ifdirectionpaging = val;
+    var cs = {
+      id: 5, nw: this.widthDirection.toFixed(), nh: this.heightDirection.toFixed(),
+      nt: this.topDirection, nl: this.leftDirection, ifpaging: this.ifdirectionpaging
+    };
+    this.cardService.setConfigSettings(cs).subscribe(res => {
+      this.msg = res.toString();
+      console.log("$$" + this.msg);
+    });;
+  }
+
+  onSaveIfImageNotePaging(val: boolean) {
+    this.ifnotepaging = val;
+    var cs = {
+      id: 4, nw: this.widthNote.toFixed(), nh: this.heightNote.toFixed(),
+      nt: this.topNote, nl: this.leftNote, ifpaging: this.ifnotepaging
+    };
+    this.cardService.setConfigSettings(cs).subscribe(res => {
+      this.msg = res.toString();
+      console.log("$$" + this.msg);
     });;
   }
 
@@ -39,11 +79,26 @@ export class SiteadminComponent implements OnInit {
     this.cardService.getConfigSettings().subscribe((data: any) => {
       this.configList = data;
       this.configList.forEach(config => {
-         if (config.id == 3) {
+        if (config.id == 5) {
+          this.widthDirection = config.nw;
+          this.heightDirection = config.nh;
+          this.topDirection = config.nt;
+          this.leftDirection = config.nl;
+          this.ifdirectionpaging = config.ifPaging;
+        }
+        else if (config.id == 4) {
+          this.widthNote = config.nw;
+          this.heightNote = config.nh;
+          this.topNote = config.nt;
+          this.leftNote = config.nl;
+          this.ifnotepaging = config.ifPaging;
+        }
+        else if (config.id == 3) {
           this.widthImage = config.nw;
           this.heightImage = config.nh;
           this.topImage = config.nt;
           this.leftImage = config.nl;
+          this.ifimagepaging = config.ifpaging;
         }
       });
     })

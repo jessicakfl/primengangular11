@@ -15,17 +15,14 @@ const enum Status {
 export class ImagedirectionsComponent implements OnInit {
   cardtitle = "";
 
-  ngOnInit(): void {
-    this.cardtitle = "Image Directions";
-    this.refreshImageDirectionsList();
-  }
   constructor(private cardService: CardService) { }
 
-  @Input('width') public width: number;
-  @Input('height') public height: number;
-  @Input('left') public left: number;
-  @Input('top') public top: number;
+  @Input('widthDirection') public width: number;
+  @Input('heightDirection') public height: number;
+  @Input('leftDirection') public left: number;
+  @Input('topDirection') public top: number;
   @ViewChild("box") public box: ElementRef;
+  @Input('ifdiretionpaging') public ifdiretionpaging: boolean;
   private boxPosition: { left: number, top: number };
   private containerPos: { left: number, top: number, right: number, bottom: number };
   public mouse: { x: number, y: number }
@@ -34,6 +31,14 @@ export class ImagedirectionsComponent implements OnInit {
   ImageDirectionList: Imagedirection = [];
   msg: string = "";
   ifimagepaging = true;
+
+  ngOnInit(): void {
+    this.cardtitle = "Image Directions";
+    this.refreshImageDirectionsList();
+    this.cardService.getIfImagePaging(5).subscribe((data: boolean) => {
+      this.ifdiretionpaging = data;
+    })
+  }
 
   refreshImageDirectionsList() {
     this.cardService.getImageDirectionList().subscribe(data => {

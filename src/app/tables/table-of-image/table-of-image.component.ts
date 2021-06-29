@@ -35,9 +35,9 @@ export class TableOfImageComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.cardtitle = "Image Table";
     this.refreshImageList();
-    // this.cardService.getIfImagePaging(3).subscribe((data: boolean) => {
-    //   this.ifimagepaging = data;
-    // })
+    this.cardService.getIfImagePaging(3).subscribe((data: boolean) => {
+      this.ifimagepaging = data;
+    })
   }
 
   refreshImageList() {
@@ -82,11 +82,11 @@ export class TableOfImageComponent implements OnInit, AfterViewInit {
     //if(this.resizeCondMeet()){
     this.width = Number(this.mouse.x > this.boxPosition.left) ? this.mouse.x - this.boxPosition.left : 0;
     this.height = Number(this.mouse.y > this.boxPosition.top) ? this.mouse.y - this.boxPosition.top : 0;
-    var val = { id: 3, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left };
-    // this.cardService.setConfigSettings(val).subscribe(res => {
-    //   this.msg = res.toString();
-    // });
-    //}
+    var val = { id: 3, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left, ifpaging: this.ifimagepaging };
+    this.cardService.setConfigSettings(val).subscribe(res => {
+      this.msg = res.toString();
+    });
+    // }
   }
 
   private resizeCondMeet() {
@@ -97,11 +97,11 @@ export class TableOfImageComponent implements OnInit, AfterViewInit {
     //if(this.moveCondMeet()){
     this.left = this.mouseClick.left + (this.mouse.x - this.mouseClick.x);
     this.top = this.mouseClick.top + (this.mouse.y - this.mouseClick.y);
-    var val = { id: 3, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left };
-    // this.cardService.setConfigSettings(val).subscribe(res => {
-    //   this.msg = res.toString();
-    // });
-    ///}
+    var val = { id: 3, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left, ifpaging: this.ifimagepaging };
+    this.cardService.setConfigSettings(val).subscribe(res => {
+      this.msg = res.toString();
+    });
+    // }
   }
 
   private moveCondMeet() {
