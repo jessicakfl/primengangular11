@@ -84,14 +84,14 @@ export class SiteadminComponent implements OnInit {
           this.heightDirection = config.nh;
           this.topDirection = config.nt;
           this.leftDirection = config.nl;
-          this.ifdirectionpaging = config.ifPaging;
+          this.ifdirectionpaging = config.ifpaging;
         }
         else if (config.id == 4) {
           this.widthNote = config.nw;
           this.heightNote = config.nh;
           this.topNote = config.nt;
           this.leftNote = config.nl;
-          this.ifnotepaging = config.ifPaging;
+          this.ifnotepaging = config.ifpaging;
         }
         else if (config.id == 3) {
           this.widthImage = config.nw;
