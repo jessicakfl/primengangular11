@@ -22,27 +22,26 @@ export class ImagedirectionsComponent implements OnInit {
   @Input('widthDirection') public width: number;
   @Input('heightDirection') public height: number;
   @Input('leftDirection') public left: number;
-  @Input('topDirection') public top: number;
+  @Input('topDirection') public top: number
+  @Input('ifdiretionpaging') public ifdiretionpaging: boolean;;
   @ViewChild("box") public box: ElementRef;
-  @Input('ifdiretionpaging') public ifdiretionpaging: boolean;
   private boxPosition: { left: number, top: number };
   private containerPos: { left: number, top: number, right: number, bottom: number };
   public mouse: { x: number, y: number }
   public status: Status = Status.OFF;
   private mouseClick: { x: number, y: number, left: number, top: number }
   ImageDirectionList: Imagedirection = [];
-  ifimagepaging = true;
   msg: string = "";
   sub: any;
   id: any;
   ngOnInit(): void {
     this.cardtitle = "Image Directions";
     this.refreshImageDirectionsList();
-    this.cardService.getIfImagePaging(5).subscribe((data: boolean) => {
-      this.ifdiretionpaging = data;
-    })
+    // this.cardService.getIfImagePaging(5).subscribe((data: boolean) => {
+    //   this.ifdiretionpaging = data;
+    // })
   }
-  
+
   // this.sub = this._Activedroute.paramMap.subscribe(params => {
   //   this.id = params.get('id');
   //   console.log("##"+this.id);
@@ -52,13 +51,13 @@ export class ImagedirectionsComponent implements OnInit {
   //   });
   // })
   refreshImageDirectionsList() {
-      this.sub = this._Activedroute.paramMap.subscribe(params => {
-    this.id = params.get('id');
-    this.cardService.getImageDirectionssByImageId(this.id).subscribe(data => {
-      this.ImageDirectionList = data;
-    });
-  })
-}
+    this.sub = this._Activedroute.paramMap.subscribe(params => {
+      this.id = params.get('id');
+      this.cardService.getImageDirectionssByImageId(this.id).subscribe(data => {
+        this.ImageDirectionList = data;
+      });
+    })
+  }
   ngAfterViewInit() {
     this.loadBox();
     this.loadContainer();
@@ -96,7 +95,7 @@ export class ImagedirectionsComponent implements OnInit {
     //if(this.resizeCondMeet()){
     this.width = Number(this.mouse.x > this.boxPosition.left) ? this.mouse.x - this.boxPosition.left : 0;
     this.height = Number(this.mouse.y > this.boxPosition.top) ? this.mouse.y - this.boxPosition.top : 0;
-    var val = { id: 3, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left };
+    var val = { id: 5, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left };
     this.cardService.setConfigSettings(val).subscribe(res => {
       this.msg = res.toString();
     });
@@ -111,7 +110,7 @@ export class ImagedirectionsComponent implements OnInit {
     //if(this.moveCondMeet()){
     this.left = this.mouseClick.left + (this.mouse.x - this.mouseClick.x);
     this.top = this.mouseClick.top + (this.mouse.y - this.mouseClick.y);
-    var val = { id: 3, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left };
+    var val = { id: 5, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left };
     this.cardService.setConfigSettings(val).subscribe(res => {
       this.msg = res.toString();
     });

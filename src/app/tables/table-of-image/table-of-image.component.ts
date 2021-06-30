@@ -31,15 +31,10 @@ export class TableOfImageComponent implements OnInit, AfterViewInit {
   cardtitle = "";
   ImageList: Image = [];
   msg: string = "";
-  // ifpaging:boolean=false;
 
   ngOnInit() {
     this.cardtitle = "Image Table";
     this.refreshImageList();
-    this.cardService.getIfImagePaging(3).subscribe((data: boolean) => {
-      this.ifimagepaging = data;
-      console.log("$$"+this.ifimagepaging);
-    })
   }
 
   refreshImageList() {

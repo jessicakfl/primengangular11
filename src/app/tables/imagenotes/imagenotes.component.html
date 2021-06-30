@@ -6,9 +6,9 @@
     <!--<span>{{width | number:'1.0-0'}}px</span>
     <span>{{height | number:'1.0-0'}}px</span>
     <span>({{left}}, {{top}})</span>-->
-    <div *ngIf="ifnotepaging">
-    <label class="col-sm-3 col-form-label"
-        style="background-color: green; display:inline-block;width: 100%;">Image Notes</label>
+        <label class="col-sm-3 col-form-label"
+        style="background-color: green; display:inline-block;width: 100%;">{{cardtitle}}</label>
+        <div *ngIf="ifnotepaging">
         <p-table [value]="ImageNoteList" appendTo="body" [style]="{'width':'100%','overflow':'auto!important'}"
         [responsive]="true" [rows]="5" [resizableColumns]="true" columnResizeMode="expand" [paginator]="true"
         [rowsPerPageOptions]="[10,15,20,25]">
@@ -31,7 +31,7 @@
         <ng-template pTemplate="header">
             <tr style="text-align:left">
                 <th>Id</th>
-                <th>notes1</th>
+                <th>notes2</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-imagenote>

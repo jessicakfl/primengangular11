@@ -14,24 +14,23 @@ export class SubtablesComponent implements OnInit {
     private _router: Router,
     private cardService: CardService) {
   }
-  widthDirection: number = 300;
+  widthDirection: number = 100;
   heightDirection: number = 100;
   topDirection: number = 100;
   leftDirection: number = 100;
-  widthNote: number = 320;
+  widthNote: number = 80;
   heightNote: number = 220;
   topNote: number = 50;
   leftNote: number = 440;
-  widthImage: number = 1000;
-  heightImage: number = 135;
-  topImage: number = 50;
-  leftImage: number = 100;
-  ifnotepaging: boolean = false;
-  ifdiretionpaging: boolean = false;
-  ifimagepaging = true;
-  ifdirectionpaging = true;
+  // widthImage: number = 1000;
+  // heightImage: number = 135;
+  // topImage: number = 50;
+  // leftImage: number = 100;
+  ifnotepaging: boolean;
+  ifdiretionpaging: boolean;
+  ifimagepaging:boolean;
   configList: any[];
-  ifsubtable = false;
+  // ifsubtable = false;
   imagenote: Imagenote;
   ngOnInit() {
     this.loadConfig();
@@ -46,7 +45,7 @@ export class SubtablesComponent implements OnInit {
           this.heightDirection = config.nh;
           this.topDirection = config.nt;
           this.leftDirection = config.nl;
-          this.ifdirectionpaging = config.ifPaging;
+          this.ifdiretionpaging = config.ifPaging;
         }
         else if (config.id == 4) {
           this.widthNote = config.nw;
@@ -55,13 +54,13 @@ export class SubtablesComponent implements OnInit {
           this.leftNote = config.nl;
           this.ifnotepaging = config.ifPaging;
         }
-        else if (config.id == 3) {
-          this.widthImage = config.nw;
-          this.heightImage = config.nh;
-          this.topImage = config.nt;
-          this.leftImage = config.nl;
-          this.ifimagepaging = config.ifpaging;
-        }
+        // else if (config.id == 3) {
+        //   this.widthImage = config.nw;
+        //   this.heightImage = config.nh;
+        //   this.topImage = config.nt;
+        //   this.leftImage = config.nl;
+        //   this.ifimagepaging = config.ifpaging;
+        // }
       });
     })
   }

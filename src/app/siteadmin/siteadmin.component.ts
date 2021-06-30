@@ -11,10 +11,11 @@ import { CardService } from '../service/card.service';
 })
 
 export class SiteadminComponent implements OnInit {
-  ifimagepaging:boolean;
-  ifdirectionpaging:boolean;
-  ifnotepaging:boolean;
+  public ifimagepaging: boolean;
+  ifdirectionpaging: boolean;
+  ifnotepaging: boolean;
   msg: String = "";
+
   constructor(private cardService: CardService) { }
   widthDirection: number = 300;
   heightDirection: number = 100;
@@ -28,11 +29,7 @@ export class SiteadminComponent implements OnInit {
   heightImage: number = 135;
   topImage: number = 50;
   leftImage: number = 100;
-
-  // widthImage: number = 1000;
-  // heightImage: number = 135;
-  // topImage: number = 50;
-  // leftImage: number = 100;
+  
   configList: any[];
   ifsubtable = false;
   ngOnInit(): void {
@@ -47,7 +44,6 @@ export class SiteadminComponent implements OnInit {
     };
     this.cardService.setConfigSettings(cs).subscribe(res => {
       this.msg = res.toString();
-      console.log("$$" + this.msg);
     });
   }
 
@@ -59,7 +55,6 @@ export class SiteadminComponent implements OnInit {
     };
     this.cardService.setConfigSettings(cs).subscribe(res => {
       this.msg = res.toString();
-      console.log("$$" + this.msg);
     });;
   }
 
@@ -71,7 +66,6 @@ export class SiteadminComponent implements OnInit {
     };
     this.cardService.setConfigSettings(cs).subscribe(res => {
       this.msg = res.toString();
-      console.log("$$" + this.msg);
     });;
   }
 
