@@ -22,15 +22,11 @@ export class SubtablesComponent implements OnInit {
   heightNote: number = 220;
   topNote: number = 50;
   leftNote: number = 440;
-  // widthImage: number = 1000;
-  // heightImage: number = 135;
-  // topImage: number = 50;
-  // leftImage: number = 100;
+
   ifnotepaging: boolean;
   ifdiretionpaging: boolean;
   ifimagepaging:boolean;
   configList: any[];
-  // ifsubtable = false;
   imagenote: Imagenote;
   ngOnInit() {
     this.loadConfig();
@@ -54,13 +50,6 @@ export class SubtablesComponent implements OnInit {
           this.leftNote = config.nl;
           this.ifnotepaging = config.ifPaging;
         }
-        // else if (config.id == 3) {
-        //   this.widthImage = config.nw;
-        //   this.heightImage = config.nh;
-        //   this.topImage = config.nt;
-        //   this.leftImage = config.nl;
-        //   this.ifimagepaging = config.ifpaging;
-        // }
       });
     })
   }
