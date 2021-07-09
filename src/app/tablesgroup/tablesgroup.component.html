@@ -1,0 +1,34 @@
+<table id="tablesgroup">
+    <!-- <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead> -->
+
+    <tbody>
+        <tr>
+            <td>
+                <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                    <!-- <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div> -->
+                    <app-mytable cdkDrag></app-mytable>
+                    <app-mytable cdkDrag></app-mytable>
+                    <app-mytable cdkDrag></app-mytable>
+                </div>
+
+            </td>
+            <td>
+                <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                    <mytable1 cdkDrag></mytable1>
+                </div>
+            </td>
+            <td>
+                <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                    <mytable1 cdkDrag></mytable1>
+                    <app-mytable cdkDrag></app-mytable>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

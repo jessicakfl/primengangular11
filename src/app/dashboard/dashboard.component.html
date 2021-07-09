@@ -1,0 +1,52 @@
+<!-- <p>dashboard works!</p>
+
+<div cdkDrag>Drag me around!</div>
+
+<div class="example-box" cdkDragLockAxis="y" cdkDrag>
+    I can only be dragged up/down
+</div>
+  
+<div class="example-box" cdkDragLockAxis="x" cdkDrag>
+    I can only be dragged left/right
+</div> -->
+
+
+
+  <!-- <div cdkDropListGroup style="background: rgb(248, 248, 248);"> -->
+  <div cdkDropListGroup >
+    <div class="example-container">
+      <!-- <h2>First Column</h2> -->
+      <div
+        cdkDropList
+        [cdkDropListData]="firstColumn"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of firstColumn" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+  
+    <div class="example-container">
+      <!-- <h2>Second Column</h2> -->
+      <div
+        cdkDropList
+        [cdkDropListData]="secondColumn"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of secondColumn" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+
+    <div class="example-container">
+        <!-- <h2>Third Column</h2> -->
+        <div
+          cdkDropList
+          [cdkDropListData]="thirdColumn"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let item of thirdColumn" cdkDrag>{{item}}</div>
+
+          <app-mytable></app-mytable>
+
+        </div>
+    </div>
+  </div>

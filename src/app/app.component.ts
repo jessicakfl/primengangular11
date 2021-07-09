@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -11,6 +13,35 @@ export class AppComponent {
     tabitems: MenuItem[];
     title = 'EMIS';
     constructor() { }
+    firstColumn = [
+        'Get to work',
+        'Go home'
+      ];
+    
+      secondColumn = [
+        'Get up',
+        'Brush teeth',
+        'Take a shower'
+      ];
+    
+      thirdColumn = [
+        'Check e-mail',
+        'Pick up groceries',
+        'Walk dog',
+        'Watch TV',
+        'Work',
+        'Fall asleep'
+      ];
+      drop(event: CdkDragDrop<string[]>) {
+        if (event.previousContainer === event.container) {
+          moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+        } else {
+          transferArrayItem(event.previousContainer.data,
+                            event.container.data,
+                            event.previousIndex,
+                            event.currentIndex);
+        }
+      }
     ngOnInit(): void {
         this.items = [
             {
@@ -56,7 +87,7 @@ export class AppComponent {
             {
                 label: 'Help',
                 icon: 'pi pi-fw pi-cog',
-                'routerLink': ['help']
+                'routerLink': ['dashboard']
             }
         ];
         this.tabitems = [

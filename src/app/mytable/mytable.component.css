@@ -1,0 +1,37 @@
+table {
+    width: 100%;
+}
+
+.mat-row {
+    height: auto;
+  }
+  
+  .mat-cell {
+    padding: 1.5px 1.5px 1.5px 0;
+  }
+
+  th {
+    /* display: table-cell;
+    vertical-align: inherit; */
+    font-weight: bold;
+    font: 16px;
+    background-color:lightsteelblue;
+    font: 14px!important;
+  }
+  tr {
+    font-size: 12px!important;
+  }
+  tr:nth-child(even) {background-color: #f2f2f2;}
+
+
+  .mat-header-cell,  .mat-header-row {
+    font-size: 13px;
+    height:2em;
+    min-width: 1rem;
+  }
+
+  .mat-cell {
+    font-size: 12px;
+  }
+
+  /* th.mat-header-cell, td.mat-cell, */
