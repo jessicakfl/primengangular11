@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -18,9 +18,9 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  btnClick= function () {
+  btnClick = function () {
     this.router.navigateByUrl('/dashboard');
-  };  
+  };
 
 
   firstColumn = [
@@ -48,9 +48,9 @@ export class DashboardComponent implements OnInit {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
       transferArrayItem(event.previousContainer.data,
-                        event.container.data,
-                        event.previousIndex,
-                        event.currentIndex);
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex);
     }
   }
 

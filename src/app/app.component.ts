@@ -94,7 +94,7 @@ export class AppComponent {
             { label: 'Home', icon: 'pi pi-fw pi-home', 'routerLink': ['/table'], },
             { label: 'Site Admin ', icon: 'pi pi-fw pi-calendar', 'routerLink': ['siteadmin'] },
             { label: 'My Profile ', icon: 'pi pi-fw pi-pencil' },
-            { label: 'Central Manager', icon: 'pi pi-fw pi-file', 'routerLink': ['/help'], }
+            { label: 'Central Manager', icon: 'pi pi-fw pi-file', 'routerLink': ['/tablesgroup'], }
         ];
     }
 }
