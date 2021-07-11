@@ -1,0 +1,56 @@
+
+<table class='table'>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Zip Code</th>
+        <th>County</th>
+        <th>State</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers;">
+        <td>{{customer.customerNo}}</td>
+        <td>{{customer.firstName}}</td>
+        <td>{{customer.lastName}}</td>
+        <td>{{customer.address}}</td>
+        <td>{{customer.city}}</td>
+        <td>{{customer.zipCode}}</td>
+        <td>{{customer.county}}</td>
+        <td>{{customer.state}}</td>
+        <td>{{customer.country}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+ <!---
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" cdkDrag>
+
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef> Weight </th>
+      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef> Symbol </th>
+      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table> -->

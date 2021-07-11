@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 
@@ -8,7 +8,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
   styleUrls: ['./tablesgroup.component.css']
 })
 export class TablesgroupComponent implements OnInit {
-
+  @ViewChild('dragHandleTmpl') dragHandleTmpl; 
   constructor() { }
 
   ngOnInit(): void {

@@ -22,6 +22,7 @@ import { MytableComponent } from './mytable/mytable.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { TablesgroupComponent } from './tablesgroup/tablesgroup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { Mytable1Component } from './mytable1/mytable1.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MytableComponent,
     TablesgroupComponent,
     DashboardComponent,
+    Mytable1Component,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 
@@ -36,6 +36,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 
 export class MytableComponent implements OnInit {
+
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
 
@@ -46,7 +47,7 @@ export class MytableComponent implements OnInit {
   }
 
 
-  drop(event: CdkDragDrop<string[]>) {
+  onDrop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {

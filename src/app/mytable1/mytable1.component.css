@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+}
+
+.tr {
+    height: auto;
+    padding: 1.5px 1.5px 1.5px 0;
+}
+  
+
+
+th {
+    height:2em;
+    font-weight: bold;
+    background-color:lightsteelblue;
+    font: 10px!Important;
+}
+
+td {
+    font-size: 12px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+.mat-header-cell,  .mat-header-row, .mat-body, .mat-body-1, .mat-typography {
+    font-size: 10px!Important;
+    height:2em;
+    min-width: 1rem;
+  }
