@@ -1,29 +1,40 @@
-<table id="tablesgroup">
+<div class="container">
+  
+    <div class="list-container">
 
-    <tbody>
-        <tr>
-            <td>
-                <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-                    <app-mytable cdkDrag></app-mytable>
-                    <app-mytable cdkDrag></app-mytable>
-                    <app-mytable cdkDrag></app-mytable>
-                </div>
-
-            </td>
-            <td>
-                <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-                    <mytable1 cdkDrag></mytable1>
-                </div>
-            </td>
-            <td>
-                <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-                    <mytable1 cdkDrag></mytable1>
-                    <app-mytable cdkDrag></app-mytable>
-                </div>
-            </td>
-        </tr>
-
-    <!-- <div *ngTemplateOutlet="dragHandleTmpl">
-    </div>  -->
-    </tbody>
-</table>
+        <div class="todo-container column-container">
+          <div class="list"
+               cdkDropList
+               #todoList="cdkDropList"
+               [cdkDropListData]="dataSource"
+               [cdkDropListConnectedTo]="[doneList]"
+               (cdkDropListDropped)="drop($event)">
+            <h2>a list</h2>
+            <mat-card *ngFor="let todo of dataSource" cdkDrag>
+              <mat-card-header>
+                <mat-card-title>{{todo.name}}</mat-card-title>
+                <mat-card-subtitle>{{todo.weight}}</mat-card-subtitle>
+              </mat-card-header>
+            </mat-card>
+          </div>
+        </div>
+  
+        <div class="done-container column-container">
+            <div class="list"
+                 cdkDropList
+                 #doneList="cdkDropList"
+                 [cdkDropListData]="dataSource2"
+                 [cdkDropListConnectedTo]="todoList"
+                 (cdkDropListDropped)="drop($event)">
+              <h2>b list</h2>
+              <mat-card *ngFor="let complete of dataSource2" cdkDrag>
+                <mat-card-header>
+                  <mat-card-title>{{complete.name}}</mat-card-title>
+                  <mat-card-subtitle>{{complete.weight}}</mat-card-subtitle>
+                </mat-card-header>
+              </mat-card>
+            </div>
+          </div>
+      
+        </div>
+      </div>
