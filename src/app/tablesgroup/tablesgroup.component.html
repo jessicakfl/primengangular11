@@ -13,9 +13,7 @@
             <mat-card *ngFor="let todo of dataSource" cdkDrag>
               <mat-card-header>
                 <mat-card-title>{{todo.position}}</mat-card-title>
-                <!-- <mat-card-content><tableofcard></tableofcard></mat-card-content> -->
                 <mat-card-content><tableofgroup></tableofgroup></mat-card-content>
-                <!-- <mat-card-content><app-table-of-image></app-table-of-image></mat-card-content> -->
               </mat-card-header>
             </mat-card>
           </div>
@@ -32,9 +30,7 @@
               <mat-card *ngFor="let complete of dataSource2" cdkDrag>
                 <mat-card-header>
                   <mat-card-title>{{complete.position}}</mat-card-title>
-                  <!-- <mat-card-content><tableofcard></tableofcard></mat-card-content> -->
                   <mat-card-content><tableofgroup></tableofgroup></mat-card-content>
-                  <!-- <mat-card-content><app-table-of-image></app-table-of-image></mat-card-content> -->
                 </mat-card-header>
               </mat-card>
             </div>
@@ -47,9 +43,9 @@
                  [cdkDropListConnectedTo]="[doneList2]"
                  (cdkDropListDropped)="drop($event)">
               <h2>C</h2>
-              <mat-card *ngFor="let todo of dataSource3" cdkDrag>
+              <mat-card *ngFor="let complete of dataSource3" cdkDrag>
                 <mat-card-header>
-                  <mat-card-title>{{todo.position}}</mat-card-title>
+                  <mat-card-title>{{complete.position}}</mat-card-title>
                   <mat-card-content><tableofcard></tableofcard></mat-card-content>
                 </mat-card-header>
               </mat-card>

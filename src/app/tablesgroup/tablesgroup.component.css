@@ -2,7 +2,7 @@ table, th, td {
     border: 1px solid black;
 }
 table {
-    width: 100%;
+    width: 80%;
 }
 
 td {
@@ -30,7 +30,7 @@ td {
   
   .column-container {
     width: 600px;
-    max-width: 100%;
+    max-width: 80%;
     margin: 0 25px 25px 0;
     display: inline-block;
     vertical-align: top;
