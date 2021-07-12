@@ -13,9 +13,9 @@
             <mat-card *ngFor="let todo of dataSource" cdkDrag>
               <mat-card-header>
                 <mat-card-title>{{todo.position}}</mat-card-title>
-                <mat-card-content>{{todo.name}}</mat-card-content>
-                <mat-card-content>{{todo.weight}}</mat-card-content>
-                <mat-card-content>{{todo.symbol}}</mat-card-content>
+                <!-- <mat-card-content><tableofcard></tableofcard></mat-card-content> -->
+                <mat-card-content><tableofgroup></tableofgroup></mat-card-content>
+                <!-- <mat-card-content><app-table-of-image></app-table-of-image></mat-card-content> -->
               </mat-card-header>
             </mat-card>
           </div>
@@ -32,9 +32,9 @@
               <mat-card *ngFor="let complete of dataSource2" cdkDrag>
                 <mat-card-header>
                   <mat-card-title>{{complete.position}}</mat-card-title>
-                  <mat-card-content>{{complete.name}}</mat-card-content>
-                  <mat-card-content>{{complete.weight}}</mat-card-content>
-                  <mat-card-content>{{complete.symbol}}</mat-card-content>
+                  <!-- <mat-card-content><tableofcard></tableofcard></mat-card-content> -->
+                  <mat-card-content><tableofgroup></tableofgroup></mat-card-content>
+                  <!-- <mat-card-content><app-table-of-image></app-table-of-image></mat-card-content> -->
                 </mat-card-header>
               </mat-card>
             </div>
