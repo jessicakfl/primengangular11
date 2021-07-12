@@ -16,6 +16,15 @@ const ELEMENT_DATA2: PeriodicElement[] = [
   { position: 2, name: '123', weight: 4.0026, symbol: 'He' },
   // { position: 3, name: 'Litllium', weight: 9.0122, symbol: 'Be' }
 ];
+const ELEMENT_DATA3: PeriodicElement[] = [
+  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
+  // { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
+];
+const ELEMENT_DATA4: PeriodicElement[] = [
+  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
+  { position: 2, name: '123', weight: 4.0026, symbol: 'He' },
+  // { position: 3, name: 'Litllium', weight: 9.0122, symbol: 'Be' }
+];
 @Component({
   selector: 'app-tablesgroup',
   templateUrl: './tablesgroup.component.html',
@@ -27,6 +36,8 @@ export class TablesgroupComponent implements OnInit {
   title = 'drag tables';
   dataSource = ELEMENT_DATA;
   dataSource2 = ELEMENT_DATA2;
+  dataSource3 = ELEMENT_DATA3;
+  dataSource4 = ELEMENT_DATA4;
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
 
   drop(event: CdkDragDrop<string[]>) {
