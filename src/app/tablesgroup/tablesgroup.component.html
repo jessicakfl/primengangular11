@@ -9,7 +9,7 @@
                [cdkDropListData]="dataSource"
                [cdkDropListConnectedTo]="[doneList]"
                (cdkDropListDropped)="drop($event)">
-            <h2>a list</h2>
+            <h2>A</h2>
             <mat-card *ngFor="let todo of dataSource" cdkDrag>
               <mat-card-header>
                 <mat-card-title>{{todo.position}}</mat-card-title>
@@ -28,7 +28,7 @@
                  [cdkDropListData]="dataSource2"
                  [cdkDropListConnectedTo]="todoList"
                  (cdkDropListDropped)="drop($event)">
-              <h2>b list</h2>
+              <h2>B</h2>
               <mat-card *ngFor="let complete of dataSource2" cdkDrag>
                 <mat-card-header>
                   <mat-card-title>{{complete.position}}</mat-card-title>
