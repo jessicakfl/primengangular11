@@ -26,7 +26,7 @@ export class TablesgroupComponent implements OnInit {
   }
   title = 'drag tables';
   dataSource = ELEMENT_DATA;
-  dataSource2 = [];
+  dataSource2 = ELEMENT_DATA2;
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
 
   drop(event: CdkDragDrop<string[]>) {

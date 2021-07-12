@@ -12,8 +12,10 @@
             <h2>a list</h2>
             <mat-card *ngFor="let todo of dataSource" cdkDrag>
               <mat-card-header>
-                <mat-card-title>{{todo.name}}</mat-card-title>
-                <mat-card-subtitle>{{todo.weight}}</mat-card-subtitle>
+                <mat-card-title>{{todo.position}}</mat-card-title>
+                <mat-card-content>{{todo.name}}</mat-card-content>
+                <mat-card-content>{{todo.weight}}</mat-card-content>
+                <mat-card-content>{{todo.symbol}}</mat-card-content>
               </mat-card-header>
             </mat-card>
           </div>
@@ -29,8 +31,10 @@
               <h2>b list</h2>
               <mat-card *ngFor="let complete of dataSource2" cdkDrag>
                 <mat-card-header>
-                  <mat-card-title>{{complete.name}}</mat-card-title>
-                  <mat-card-subtitle>{{complete.weight}}</mat-card-subtitle>
+                  <mat-card-title>{{complete.position}}</mat-card-title>
+                  <mat-card-content>{{complete.name}}</mat-card-content>
+                  <mat-card-content>{{complete.weight}}</mat-card-content>
+                  <mat-card-content>{{complete.symbol}}</mat-card-content>
                 </mat-card-header>
               </mat-card>
             </div>
