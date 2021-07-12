@@ -13,7 +13,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 const ELEMENT_DATA2: PeriodicElement[] = [
   { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  // { position: 2, name: '123', weight: 4.0026, symbol: 'He' },
+  { position: 2, name: '123', weight: 4.0026, symbol: 'He' },
   // { position: 3, name: 'Litllium', weight: 9.0122, symbol: 'Be' }
 ];
 const ELEMENT_DATA3: PeriodicElement[] = [
@@ -38,7 +38,7 @@ export class TablesgroupComponent implements OnInit {
   dataSource2 = [];
   dataSource3 = ELEMENT_DATA3;
   dataSource4 = [];
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name'];
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
