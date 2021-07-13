@@ -9,7 +9,6 @@ import { ImagenotesComponent } from './tables/imagenotes/imagenotes.component';
 import { SubtablesComponent } from './tables/subtables/subtables.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TablesgroupComponent } from './tablesgroup/tablesgroup.component';
-import { Mytable1Component } from './mytable1/mytable1.component';
 const routes: Routes = [
   {path:'help', component: HelpComponent},
   {path:'table', component:TablesComponent},
@@ -20,7 +19,6 @@ const routes: Routes = [
   {path:'imagenotes', component:ImagenotesComponent},
   {path:'table/subtables/:id', component:SubtablesComponent},
   {path:'', component:TablesComponent},
-  { path: 'mytable1', component: Mytable1Component }
 ];
 
 @NgModule({
