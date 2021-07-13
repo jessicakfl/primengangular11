@@ -22,7 +22,7 @@
             <ng-template pTemplate="body" let-image>
                 <tr>
                     <td>{{image.id}}</td>
-                    <a [routerLink]="['subtables', image.id]">
+                    <a [routerLink]="['/table/subtables', image.id]">
                         <td>{{image.name}}</td>
                     </a>
                     <td>

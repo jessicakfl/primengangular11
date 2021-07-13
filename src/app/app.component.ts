@@ -65,7 +65,7 @@ export class AppComponent {
                 'routerLink': ['/'],
                 items: [
                     { label: 'Delete', icon: 'pi pi-fw pi-trash' },
-                    { label: 'Refresh', icon: 'pi pi-fw pi-refresh', 'routerLink': ['/help'], }
+                    { label: 'Refresh', icon: 'pi pi-fw pi-refresh', 'routerLink': ['/dashboard'], }
                 ]
             },
             {
@@ -87,7 +87,7 @@ export class AppComponent {
             {
                 label: 'Help',
                 icon: 'pi pi-fw pi-cog',
-                'routerLink': ['dashboard']
+                'routerLink': ['app-help']
             }
         ];
         this.tabitems = [
