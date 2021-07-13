@@ -42,14 +42,20 @@ export class TablesgroupComponent implements OnInit {
   dataSource2 = ELEMENT_DATA2;
   configList: any[];
   dataSource3 = ELEMENT_DATA3;
-  dataSource4 = ELEMENT_DATA4;
+  dataSource4 = [];
   displayedColumns: string[] = ['position', 'name'];
+  widthImage: number = 500;
+  heightImage: number = 135;
+  topImage: number = 0;
+  leftImage: number = 0;
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data,
         event.previousIndex,
         event.currentIndex);
+        console.log("@@"+event.previousIndex);
+        console.log("$$"+event.currentIndex);
     } else {
       transferArrayItem(event.previousContainer.data,
         event.container.data,
