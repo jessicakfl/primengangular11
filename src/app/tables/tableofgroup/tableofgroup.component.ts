@@ -57,10 +57,12 @@ export class TableofgroupComponent implements OnInit {
     }
     const { left, top } = this.box.nativeElement.getBoundingClientRect();
     this.boxPosition = { left, top };
-    var val = { id: 2, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left };
-    this.cardService.setConfigSettings(val).subscribe(res => {
-      this.msg = res.toString();
-    });
+    if (this.width && this.height){
+      var val = { id: 2, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left };
+      this.cardService.setConfigSettings(val).subscribe(res => {
+        this.msg = res.toString();
+      });
+    }
   }
 
   private loadContainer() {
@@ -100,10 +102,12 @@ export class TableofgroupComponent implements OnInit {
     //if(this.moveCondMeet()){
     this.left = this.mouseClick.left + (this.mouse.x - this.mouseClick.x);
     this.top = this.mouseClick.top + (this.mouse.y - this.mouseClick.y);
-    var val = { id: 2, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left };
-    this.cardService.setConfigSettings(val).subscribe(res => {
-      this.msg = res.toString();
-    });
+    if (this.width && this.height) {
+      var val = { id: 2, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left };
+      this.cardService.setConfigSettings(val).subscribe(res => {
+        this.msg = res.toString();
+      });
+    }
     ///}
   }
 
