@@ -1,72 +1,64 @@
-<div class="container">
-  
+<!-- <div class="container"> -->
+
     <div class="list-container">
 
         <div class="todo-container column-container">
-          <div class="list"
-               cdkDropList
-               #todoList="cdkDropList"
-               [cdkDropListData]="dataSource"
-               [cdkDropListConnectedTo]="[doneList]"
-               (cdkDropListDropped)="drop($event)">
-            <h2>A</h2>
-            <mat-card *ngFor="let todo of dataSource" cdkDrag>
-              <mat-card-header>
-                <mat-card-title>{{todo.position}}</mat-card-title>
-                <mat-card-content><tableofgroup></tableofgroup></mat-card-content>
-              </mat-card-header>
-            </mat-card>
-          </div>
+            <div class="list" cdkDropList #todoList="cdkDropList" [cdkDropListData]="dataSource"
+                [cdkDropListConnectedTo]="[doneList]" (cdkDropListDropped)="drop($event)">
+                <h1 style="visibility: hidden;">A</h1>
+                <mat-card *ngFor="let todo of dataSource" cdkDrag>
+                    <mat-card-header>
+                        <mat-card-title>{{todo.position}}</mat-card-title>
+                        <mat-card-content>
+                            <tableofgroup></tableofgroup>
+                        </mat-card-content>
+                    </mat-card-header>
+                </mat-card>
+            </div>
         </div>
 
         <div class="done-container column-container">
-            <div class="list"
-                 cdkDropList
-                 #doneList="cdkDropList"
-                 [cdkDropListData]="dataSource2"
-                 [cdkDropListConnectedTo]="todoList"
-                 (cdkDropListDropped)="drop($event)">
-              <h2>B</h2>
-              <mat-card *ngFor="let complete of dataSource2" cdkDrag>
-                <mat-card-header>
-                  <mat-card-title>{{complete.position}}</mat-card-title>
-                  <mat-card-content><tableofgroup></tableofgroup></mat-card-content>
-                </mat-card-header>
-              </mat-card>
-            </div>
-          </div>
-          <div class="todo-container column-container">
-            <div class="list"
-                 cdkDropList
-                 #todoList2="cdkDropList"
-                 [cdkDropListData]="dataSource3"
-                 [cdkDropListConnectedTo]="[doneList2]"
-                 (cdkDropListDropped)="drop($event)">
-              <h2>C</h2>
-              <mat-card *ngFor="let complete of dataSource3" cdkDrag>
-                <mat-card-header>
-                  <mat-card-title>{{complete.position}}</mat-card-title>
-                  <mat-card-content><tableofcard></tableofcard></mat-card-content>
-                </mat-card-header>
-              </mat-card>
-            </div>
-          </div>
-    
-          <div class="done-container column-container">
-              <div class="list"
-                   cdkDropList
-                   #doneList2="cdkDropList"
-                   [cdkDropListData]="dataSource4"
-                   [cdkDropListConnectedTo]="todoList2"
-                   (cdkDropListDropped)="drop($event)">
-                <h2>D</h2>
-                <mat-card *ngFor="let complete of dataSource4" cdkDrag>
-                  <mat-card-header>
-                    <mat-card-title>{{complete.position}}</mat-card-title>
-                    <mat-card-content><tableofcard></tableofcard></mat-card-content>
-                  </mat-card-header>
+            <div class="list" cdkDropList #doneList="cdkDropList" [cdkDropListData]="dataSource2"
+                [cdkDropListConnectedTo]="todoList" (cdkDropListDropped)="drop($event)">
+                <h1 style="visibility: hidden;">A</h1>
+                <mat-card *ngFor="let complete of dataSource2" cdkDrag>
+                    <mat-card-header>
+                        <mat-card-title>{{complete.position}}</mat-card-title>
+                        <mat-card-content>
+                            <tableofgroup></tableofgroup>
+                        </mat-card-content>
+                    </mat-card-header>
                 </mat-card>
-              </div>
             </div>
         </div>
-      </div>
+        <div class="todo-container column-container">
+            <div class="list" cdkDropList #todoList2="cdkDropList" [cdkDropListData]="dataSource3"
+                [cdkDropListConnectedTo]="[doneList2]" (cdkDropListDropped)="drop($event)">
+                <h1 style="visibility: hidden;">A</h1>
+                <mat-card *ngFor="let complete of dataSource3" cdkDrag>
+                    <mat-card-header>
+                        <mat-card-title>{{complete.position}}</mat-card-title>
+                        <mat-card-content>
+                            <app-table-of-image [ifimagepaging]="ifimagepaging"></app-table-of-image>
+                        </mat-card-content>
+                    </mat-card-header>
+                </mat-card>
+            </div>
+        </div>
+
+        <div class="done-container column-container">
+            <div class="list" cdkDropList #doneList2="cdkDropList" [cdkDropListData]="dataSource4"
+                [cdkDropListConnectedTo]="todoList2" (cdkDropListDropped)="drop($event)">
+                <h1 style="visibility: hidden;">A</h1>
+                <mat-card *ngFor="let complete of dataSource4" cdkDrag>
+                    <mat-card-header>
+                        <mat-card-title>{{complete.position}}</mat-card-title>
+                        <mat-card-content>
+                            <app-table-of-image [ifimagepaging]="ifimagepaging"></app-table-of-image>
+                        </mat-card-content>
+                    </mat-card-header>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->
