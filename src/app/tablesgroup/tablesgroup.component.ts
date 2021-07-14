@@ -26,6 +26,15 @@ const ELEMENT_DATA4: PeriodicElement[] = [
   // { position: 2, name: '123', weight: 4.0026, symbol: 'He' },
   // { position: 3, name: 'Litllium', weight: 9.0122, symbol: 'Be' }
 ];
+const ELEMENT_DATA5: PeriodicElement[] = [
+  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
+  // { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
+];
+const ELEMENT_DATA6: PeriodicElement[] = [
+  // { position: 2, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
+  // { position: 2, name: '123', weight: 4.0026, symbol: 'He' },
+  // { position: 3, name: 'Litllium', weight: 9.0122, symbol: 'Be' }
+];
 @Component({
   selector: 'app-tablesgroup',
   templateUrl: './tablesgroup.component.html',
@@ -43,6 +52,8 @@ export class TablesgroupComponent implements OnInit {
   configList: any[];
   dataSource3 = ELEMENT_DATA3;
   dataSource4 = ELEMENT_DATA4;
+  dataSource5 = ELEMENT_DATA5;
+  dataSource6 = ELEMENT_DATA6;
   displayedColumns: string[] = ['position', 'name'];
   widthImage: number = 500;
   heightImage: number = 135;
