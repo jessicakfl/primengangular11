@@ -6,7 +6,7 @@
     top: 50%;
     left: 50%;
     transform: translate3d(-50%, -50%, 0);
-
+    font-family: "Arial", 10pt;
     span:first-of-type {
         position: absolute;
         left: 50%;
@@ -32,6 +32,7 @@
     //padding: 2px;
     color: #fff8dc;
     border: 1px solid #000;
+    font-family: "Arial", 10pt;
     // word-spacing:0px;
     border-spacing: 100px;
     // :hover{
@@ -51,6 +52,7 @@
 ::ng-deep .menucus{
     background-color: #d8d8fc !important;
     display:inline-block;width: 100%;
+    font-family: "Arial", 10pt;
     color: #000000;
     text-align: center;
     border: #B1B1B1 solid; 
