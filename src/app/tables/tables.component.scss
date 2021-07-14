@@ -20,7 +20,7 @@
     }
 }
 ::ng-deep .menucusbar{
-    background: darkblue !important;
+    background: #000080 !important;
     // padding: auto !important;
     display:inline-block;width: 99%;
     text-align: center;
@@ -30,7 +30,7 @@
     padding: 5px 7px 5px 12px;
     line-height:2px;
     //padding: 2px;
-    color: lightblue;
+    color: #fff8dc;
     border: 1px solid #000;
     // word-spacing:0px;
     border-spacing: 100px;
@@ -38,18 +38,18 @@
     //     color: orange;
     // }
     a:link {
-        color: orange;
+        color: #d8d8fc;
       }
       
       a:visited {
-        color: orange;
+        color: #d8d8fc;
       }
       a:focus{
         background-color: green;
     }
 }
 ::ng-deep .menucus{
-    background-color: orange !important;
+    background-color: #d8d8fc !important;
     display:inline-block;width: 100%;
     color: #000000;
     text-align: center;

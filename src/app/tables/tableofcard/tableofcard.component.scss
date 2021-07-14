@@ -1,8 +1,8 @@
 .tableofcard {
-    outline: 1px solid #191b8fdc ;
+    outline: 1px solid #000080 ;
     &.active {
         outline-style: solid;
-        background-color: orange;
+        background-color: #d8d8fc;
     }
 
     &:hover {
@@ -34,11 +34,11 @@
     transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
     border-style: solid;
     border-width: 8px;
-    border-color: transparent transparent transparent orange;
+    border-color: transparent transparent transparent #d8d8fc;
     &:hover, &:active {
         cursor: nwse-resize;
     }
 }
 tr:nth-child(even) {
-    background-color: lightblue;
+    background-color: #fff8dc;
 }
