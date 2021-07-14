@@ -54,8 +54,8 @@ export class TablesgroupComponent implements OnInit {
       moveItemInArray(event.container.data,
         event.previousIndex,
         event.currentIndex);
-        // console.log("@@"+event.previousIndex);
-        // console.log("$$"+event.currentIndex);
+      // console.log("@@"+event.previousIndex);
+      // console.log("$$"+event.currentIndex);
     } else {
       transferArrayItem(event.previousContainer.data,
         event.container.data,
