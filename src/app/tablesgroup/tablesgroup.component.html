@@ -7,7 +7,7 @@
                     <mat-card-header>
                         <mat-card-title>{{todo.position}}</mat-card-title>
                         <mat-card-content>
-                            <tableofgroup></tableofgroup>
+                            <app-tableoftickets [width]="widthImage" [height]="heightImage" [left]="leftImage" [top]="topImage"></app-tableoftickets>
                         </mat-card-content>
                     </mat-card-header>
                 </mat-card>
@@ -22,7 +22,7 @@
                     <mat-card-header>
                         <mat-card-title>{{complete.position}}</mat-card-title>
                         <mat-card-content>
-                            <tableofgroup></tableofgroup>
+                            <app-tableoftickets [width]="widthImage" [height]="heightImage" [left]="leftImage" [top]="topImage"></app-tableoftickets>
                         </mat-card-content>
                     </mat-card-header>
                 </mat-card>
@@ -67,7 +67,7 @@
                     <mat-card-header>
                         <mat-card-title>{{todo.position}}</mat-card-title>
                         <mat-card-content>
-                            <tableofcard></tableofcard>
+                            <app-tableofusers [width]="widthImage" [height]="heightImage" [left]="leftImage" [top]="topImage"></app-tableofusers>
                         </mat-card-content>
                     </mat-card-header>
                 </mat-card>
@@ -82,7 +82,7 @@
                     <mat-card-header>
                         <mat-card-title>{{complete.position}}</mat-card-title>
                         <mat-card-content>
-                            <tableofcard></tableofcard>
+                            <app-tableofusers [width]="widthImage" [height]="heightImage" [left]="leftImage" [top]="topImage"></app-tableofusers>
                         </mat-card-content>
                     </mat-card-header>
                 </mat-card>

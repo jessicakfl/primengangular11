@@ -3,26 +3,21 @@
     [class.active]="status === 1 || status === 2" (mousedown)="setStatus($event, 2)"
     (window:mouseup)="setStatus($event, 0)">
     <div class="resize-action" (mousedown)="setStatus($event, 1)"></div>
-    <!--span>{{width | number:'1.0-0'}}px</span>
-    <span>{{height | number:'1.0-0'}}px</span>
-    <span>({{left}}, {{top}})</span>-->
     <label class="col-sm-3 col-form-label"
-        style="background-color:#e1cadd; display:inline-block;width: 100%;">{{grouptitle}}</label>
-    <p-table [value]="groups">
+        style="background-color:#bebefa; display:inline-block;width: 100%;">{{title}}</label>
+    <p-table [value]="ImageList" [responsive]="true" [rows]="2" [resizableColumns]="true" columnResizeMode="expand" [paginator]="true"
+    [rowsPerPageOptions]="[10,15,20,25]">
         <ng-template pTemplate="header">
             <tr style="text-align:left">
                 <th>ID</th>
                 <th>Name</th>
-                <th>Details</th>
-                <th>App</th>
+                <th>Dep</th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-group>
+        <ng-template pTemplate="body" let-image>
             <tr>
-                <td>{{group.id}}</td>
-                <td>{{group.name}}</td>
-                <td>{{group.details}}</td>
-                <td>{{group.app}}</td>
+                <td>{{image.id}}</td>
+                <td>{{image.name}}</td>
             </tr>
         </ng-template>
     </p-table>
