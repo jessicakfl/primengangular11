@@ -57,7 +57,7 @@ export class TablesgroupComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name'];
   widthImage: number = 500;
   heightImage: number = 135;
-  topImage: number = 0;
+  topImage: number = -80;
   leftImage: number = 0;
 
   drop(event: CdkDragDrop<string[]>) {

@@ -2,25 +2,33 @@ table, th, td {
     border: 1px solid black;
 }
 table {
-    width: 80%;
+    width: 100%;
 }
 
-td {
-    /* vertical-align: top; */
-}
 .container {
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
+    /* width: 33%;
+    max-width: 100%; */
+    margin: 0 25px 25px 0;
+    /* margin: 0.1% 0.1% 0.1% 0.1%; */
+    /* margin: inherit; */
+    display: inline-block;
+    /* vertical-align: top; */
   }
   
-  h2 {
-    /* display: flex; */
-    justify-content: center;
-    align-self: center;
+  .list {
+    border: none;
+    /* border: solid 1px #ccc; */
+    min-height:200px;
+    background: rgb(248, 248, 248);
+    /* background: rgb(243, 243, 243); */
+    border-radius: 4px;
+    overflow: hidden;
+    display: block;
   }
-  
   .list-container {
     /* flex-direction: row; */
     /* justify-content: space-around; */
@@ -31,9 +39,8 @@ td {
   .column-container {
     width: 600px;
     /* max-width: 50%; */
-    margin: 10px 0px 0px 10px;
+    margin: 0 25px 25px 0;
     display: inline-block;
-    /* vertical-align: top; */
+    vertical-align: top;
     /* background-color: RGBA(255, 255, 255, 0.05); */
   }
-  
