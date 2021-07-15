@@ -55,10 +55,10 @@ export class TablesgroupComponent implements OnInit {
   dataSource5 = ELEMENT_DATA5;
   dataSource6 = ELEMENT_DATA6;
   displayedColumns: string[] = ['position', 'name'];
-  widthImage: number = 500;
-  heightImage: number = 135;
-  topImage: number = -50;
-  leftImage: number = 0;
+  widthImage: number = 516;
+  heightImage: number = 160;
+  topImage: number = -60;
+  leftImage: number = -10;
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
