@@ -51,10 +51,10 @@ export class TablesgroupComponent implements OnInit {
   dataSource7 = ELEMENT_DATA7;
   dataSource8 = ELEMENT_DATA8;
   displayedColumns: string[] = ['position', 'name'];
-  widthImage: number = 516;
-  heightImage: number = 160;
-  topImage: number = -60;
-  leftImage: number = -10;
+  widthImage: number = 558;
+  heightImage: number = 166;
+  topImage: number = -86;
+  leftImage: number = -35;
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {

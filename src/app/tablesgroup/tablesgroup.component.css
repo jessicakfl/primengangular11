@@ -1,4 +1,3 @@
-
 .container {
     /* display: flex; */
     /* flex-direction: column; */
@@ -15,9 +14,10 @@
   
   .list {
     border: none;
-    border: solid 1px #ccc;
+    border: solid 2px #ccc;
     min-height:300px;
-    background: rgb(248, 248, 248);
+    /* background: rgb(248, 248, 248); */
+    background: #d8d8fc;
     /* background: rgb(243, 243, 243); */
     border-radius: 4px;
     overflow: hidden;
@@ -37,5 +37,5 @@
     margin: 0 25px 25px 25px;
     display: inline-block;
     vertical-align: top;
-    background-color: RGBA(255, 255, 255, 0.05);
+    /* background-color: RGBA(255, 255, 255, 0.05); */
   }

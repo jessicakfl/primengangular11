@@ -32,7 +32,7 @@ export class TableofusersComponent implements OnInit {
       this.ImageList = data;
     })
   }
-  title ="Table of users";
+  title ="Table of Users";
   ngAfterViewInit() {
     this.loadBox();
     this.loadContainer();

@@ -32,7 +32,7 @@ export class TableofticketsComponent implements OnInit {
       this.ImageList = data;
     })
   }
-  title = "Table of tickets";
+  title = "Table of Tickets";
   ngAfterViewInit() {
     this.loadBox();
     this.loadContainer();
