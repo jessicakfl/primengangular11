@@ -9,7 +9,6 @@
     /* margin: 0.1% 0.1% 0.1% 0.1%; */
     /* margin: inherit; */
     display: inline-block;
-    /* vertical-align: top; */
   }
   
   .list {
@@ -28,7 +27,6 @@
     /* flex-direction: row; */
     justify-content: space-around;
     margin-top: 2em;
-  
   }
   
   .column-container {
