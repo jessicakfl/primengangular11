@@ -1,7 +1,7 @@
 <div class="container">
     <div class="container column-container">
         <div class="list" cdkDropList #todoList="cdkDropList" [cdkDropListData]="dataSource"
-            [cdkDropListConnectedTo]="[doneList]" (cdkDropListDropped)="drop($event)">
+            [cdkDropListConnectedTo]="[doneList, doneList7, doneList8]" (cdkDropListDropped)="drop($event)">
             <h1 style="visibility: hidden;">A</h1>
             <mat-card *ngFor="let todo of dataSource" cdkDrag>
                 <mat-card-header>
@@ -17,7 +17,7 @@
 
     <div class="done-container column-container">
         <div class="list" cdkDropList #doneList="cdkDropList" [cdkDropListData]="dataSource2"
-            [cdkDropListConnectedTo]="todoList" (cdkDropListDropped)="drop($event)">
+            [cdkDropListConnectedTo]="[todoList, doneList7, doneList8]" (cdkDropListDropped)="drop($event)">
             <h1 style="visibility: hidden;">A</h1>
             <mat-card *ngFor="let complete of dataSource2" cdkDrag>
                 <mat-card-header>
@@ -30,9 +30,9 @@
             </mat-card>
         </div>
     </div>
-    <!-- <div class="done-container column-container">
+    <div class="done-container column-container">
         <div class="list" cdkDropList #doneList7="cdkDropList" [cdkDropListData]="dataSource7"
-            [cdkDropListConnectedTo]="todoList" (cdkDropListDropped)="drop($event)">
+            [cdkDropListConnectedTo]="[todoList, doneList7, doneList8]" (cdkDropListDropped)="drop($event)">
             <h1 style="visibility: hidden;">A</h1>
             <mat-card *ngFor="let complete of dataSource7" cdkDrag>
                 <mat-card-header>
@@ -59,7 +59,9 @@
                 </mat-card-header>
             </mat-card>
         </div>
-    </div> -->
+    </div>
+
+
     <div class="todo-container column-container">
         <div class="list" cdkDropList #todoList2="cdkDropList" [cdkDropListData]="dataSource3"
             [cdkDropListConnectedTo]="[doneList2]" (cdkDropListDropped)="drop($event)">
