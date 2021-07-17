@@ -9,6 +9,7 @@
     /* margin: 0.1% 0.1% 0.1% 0.1%; */
     /* margin: inherit; */
     display: inline-block;
+    /* background-color: #fff8dc; */
   }
   
   .list {
@@ -16,7 +17,7 @@
     border: solid 2px #ccc;
     min-height:300px;
     /* background: rgb(248, 248, 248); */
-    background: rgb(248, 248, 248);
+    background: #fff8dc;
     /* background: rgb(243, 243, 243); */
     border-radius: 4px;
     overflow: hidden;
