@@ -1,11 +1,16 @@
+<div class="status">
+    <app-appinfo></app-appinfo>
+    <app-appinfo></app-appinfo>
+    <app-appinfo></app-appinfo>
+</div>
 <div class="control">
     <label class="col-sm-3 col-form-label">Flight Name:</label>
-    <input type="text" style="background-color: #d8d8fc;" >
+    <input type="text" style="background-color: #d8d8fc;">
     <label class="col-sm-3 col-form-label">Flight Date:</label>
-    <input type="date" style="background-color: #d8d8fc;" >
-<button style="background-color:#d8d8fc; display:inline-block;width: 100px;">Save Change</button>
+    <input type="date" style="background-color: #d8d8fc;">
+    <button style="background-color:#d8d8fc; display:inline-block;width: 100px;">Save Change</button>
 </div>
-    <div class="container">
+<div class="container">
     <div class="container column-container">
         <div class="list" cdkDropList #todoList="cdkDropList" [cdkDropListData]="dataSource"
             [cdkDropListConnectedTo]="[doneList, doneList7, doneList8]" (cdkDropListDropped)="drop($event)">

@@ -13,11 +13,20 @@
   }
   
   .control {
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
-    margin: 0px 0px 25px 50px;
+  flex-direction: row;
+    margin: 0px 0px 25px 60px;
     display: inline-block;
     
+  }
+  
+  .status {
+    width: 100%;
+    align-items: center;
+    margin: 0px 0px 0px 25px;
+    column-count: 3;
+    column-gap: 20px;
   }
   
   .list {

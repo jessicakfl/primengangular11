@@ -24,6 +24,7 @@ import { TablesgroupComponent } from './tablesgroup/tablesgroup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TableofticketsComponent } from './tables/tableoftickets/tableoftickets.component';
 import { TableofusersComponent } from './tables/tableofusers/tableofusers.component';
+import { AppinfoComponent } from './appinfo/appinfo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +43,7 @@ import { TableofusersComponent } from './tables/tableofusers/tableofusers.compon
     DashboardComponent,
     TableofticketsComponent,
     TableofusersComponent,
+    AppinfoComponent,
   ],
   imports: [
     BrowserModule,
