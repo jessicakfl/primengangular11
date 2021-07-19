@@ -10,19 +10,19 @@
         <ng-template pTemplate="header">
             <tr style="text-align:left">
                 <th>ID</th>
-                <th>Photofilepath</th>
-                <th>Name</th>
+                <th style="width: 190px; word-wrap:normal;">Photofilepath</th>
                 <th>Latitude</th>
                 <th>Longtitude</th>
+                <th>Name</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-image>
             <tr>
                 <td>{{image.id}}</td>
                 <td>{{image.photofilepath}}</td>
-                <td>{{image.name}}</td>
                 <td>{{image.nx}}</td>
                 <td>{{image.ny}}</td>
+                <input type="text" style="background-color: #d8d8fc;"  [(ngModel)]="image.name">
             </tr>
         </ng-template>
     </p-table>
