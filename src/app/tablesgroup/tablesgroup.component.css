@@ -27,6 +27,7 @@
     margin: 0px 0px 0px 25px;
     column-count: 3;
     column-gap: 20px;
+    font-weight: bold;
   }
   
   .list {
