@@ -12,6 +12,14 @@
     /* background-color: #fff8dc; */
   }
   
+  .control {
+    /* justify-content: center; */
+    align-items: center;
+    margin: 0px 0px 25px 50px;
+    display: inline-block;
+    
+  }
+  
   .list {
     border: none;
     border: solid 2px #ccc;
