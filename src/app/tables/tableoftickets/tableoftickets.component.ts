@@ -29,10 +29,10 @@ export class TableofticketsComponent implements OnInit {
   }
   refreshImageList() {
     this.cardService.getImageList().subscribe((data: any) => {
-      this.ImageList = data;
+      this.ImageList = data.reverse();
     })
   }
-  title = "Table of Tickets";
+  title = "Summary of Component Groups - Aircraft";
   ngAfterViewInit() {
     this.loadBox();
     this.loadContainer();

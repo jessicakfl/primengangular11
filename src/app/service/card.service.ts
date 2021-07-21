@@ -20,11 +20,20 @@ export class CardService {
     { "flightNumber": "as32", "origin": "LAX", "destination": "ddd" },
   ];
   private groups: Group[] = [
-    { "id": "1", "name": "fadf", "details": "asdfasdfaf", "app": "asdf" },
-    { "id": "2", "name": "asdf", "details": "afdasdf", "app": "asdf" },
-    { "id": "3", "name": "asdffddf", "details": "sss", "app": "asdf" },
-    { "id": "4", "name": "asdadff", "details": "afdadfdfdsdf", "app": "asdf" },
-    { "id": "5", "name": "asdffdfgfdf", "details": "ssffs", "app": "asdf" },
+    { "id": "1", "name": "January", "complete": "82", "late": "1", "ontime": "81", "latep": "1.22%" },
+    { "id": "2", "name": "December", "complete": "400", "late": "1", "ontime": "81", "latep": "4%" },
+    { "id": "3", "name": "November", "complete": "393", "late": "1", "ontime": "81", "latep": "1.22%" },
+    { "id": "4", "name": "Octember", "complete": "82", "late": "21", "ontime": "81", "latep": "1.22%" },
+    { "id": "5", "name": "September", "complete": "82", "late": "8", "ontime": "81", "latep": "2.75%" },
+    { "id": "6", "name": "August", "complete": "82", "late": "19", "ontime": "81", "latep": "1.22%" },
+    { "id": "7", "name": "July", "complete": "82", "late": "2", "ontime": "81", "latep": "1.22%" },
+    { "id": "8", "name": "June", "complete": "82", "late": "42", "ontime": "81", "latep": "1.22%" },
+    { "id": "9", "name": "May", "complete": "82", "late": "1", "ontime": "81", "latep": "1.22%" },
+    { "id": "10", "name": "April", "complete": "82", "late": "1", "ontime": "81", "latep": "1.22%" },
+    { "id": "11", "name": "March", "complete": "82", "late": "1", "ontime": "81", "latep": "1.22%" },
+    { "id": "12", "name": "Febury", "complete": "82", "late": "1", "ontime": "81", "latep": "1.22%" },
+    { "id": "13", "name": "Janurary", "complete": "82", "late": "1", "ontime": "81", "latep": "1.22%" },
+
   ];
   private width: number;
 

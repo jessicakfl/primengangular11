@@ -12,17 +12,21 @@
         <ng-template pTemplate="header">
             <tr style="text-align:left">
                 <th>ID</th>
-                <th>Name</th>
-                <th>Details</th>
-                <th>App</th>
+                <th>Complete</th>
+                <th>Late</th>
+                <th>Ontime</th>
+                <th>% Late</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-group>
             <tr>
-                <td>{{group.id}}</td>
+                <a [routerLink]="['/table/subtables', group.id]">
                 <td>{{group.name}}</td>
-                <td>{{group.details}}</td>
-                <td>{{group.app}}</td>
+                </a>
+                <td>{{group.complete}}</td>
+                <td style="color:red;">{{group.late}}</td>
+                <td style="color:green;">{{group.ontime}}</td>
+                <td>{{group.latep}}</td>
             </tr>
         </ng-template>
     </p-table>

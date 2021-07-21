@@ -34,7 +34,7 @@ export class TableofgroupComponent implements OnInit {
 
   ngOnInit() {
     this.groups = this.cardService.getGroups();
-    this.grouptitle = "Group Table";
+    this.grouptitle = "Compeleted Components";
   }
 
   ngAfterViewInit() {

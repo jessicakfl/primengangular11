@@ -3,28 +3,34 @@
     [class.active]="status === 1 || status === 2" (mousedown)="setStatus($event, 2)"
     (window:mouseup)="setStatus($event, 0)">
     <div style="text-align:right">
-</div>
+    </div>
     <div class="resize-action" (mousedown)="setStatus($event, 1)"></div>
     <label class="col-sm-3 col-form-label"
-        style="background-color:#7676ac; display:inline-block;width: 100%;">{{title}}</label>
+        style="background-color:#d8d8fc; display:inline-block;width: 100%;">{{title}}</label>
     <p-table [responsive]="true" [rows]="10" [resizableColumns]="true" columnResizeMode="expand" [paginator]="true"
-    [rowsPerPageOptions]="[10,15,20,25]" [value]="ImageList">
+        [rowsPerPageOptions]="[10,15,20,25]" [value]="ImageList">
         <ng-template pTemplate="header">
-            <tr style="text-align:left">
-                <th>ID</th>
-                <th style="width: 190px; word-wrap:normal;">Photofilepath</th>
-                <th>Latitude</th>
-                <th>Longtitude</th>
-                <th>Name</th>
+            <tr style="text-align:left;white-space:nowrap;">
+                <th>Weapn System</th>
+                <!-- <th style="width: 190px; word-wrap:normal;">Photofilepath</th> -->
+                <th style="width: 190px; word-wrap:normal;">Component Group</th>
+                <th>In work</th>
+                <th>Late</th>
+                <th>On Time</th>
+                <th>No EDD</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-image>
             <tr>
                 <td>{{image.id}}</td>
-                <td>{{image.photofilepath}}</td>
-                <td>{{image.nx}}</td>
-                <td>{{image.ny}}</td>
-                <input type="text" style="background-color: #d8d8fc;"  [(ngModel)]="image.name">
+                <a [routerLink]="['/table/subtables', image.id]">
+                    <td>{{image.name|uppercase}}</td>
+                </a>
+                <td style="color:darkblue;">{{image.nx}}</td>
+                <td style="color:red;">{{image.ny}}</td>
+                <td style="color:green;">{{image.nx}}</td>
+                <td style="color:red;">{{image.nx}}</td>
+                <!-- <input type="text" style="background-color: #d8d8fc;"  [(ngModel)]="image.name"> -->
             </tr>
         </ng-template>
     </p-table>
