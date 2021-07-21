@@ -22,11 +22,11 @@
   }
   
   .status {
-    width: 100%;
+    width: 90%;
     align-items: center;
     margin: 0px 0px 0px 25px;
     column-count: 4;
-    column-gap: 20px;
+    column-gap: 10px;
     /* font-weight: bold; */
     color: #000080;
   }
