@@ -13,6 +13,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   // { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
 ];
 const ELEMENT_DATA2: PeriodicElement[] = [
+  { position: 2, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
 ];
 const ELEMENT_DATA3: PeriodicElement[] = [
   { position: 2, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
@@ -21,7 +22,7 @@ const ELEMENT_DATA3: PeriodicElement[] = [
 const ELEMENT_DATA4: PeriodicElement[] = [
 ];
 const ELEMENT_DATA5: PeriodicElement[] = [
-  { position: 3, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
+  // { position: 3, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
 ];
 const ELEMENT_DATA6: PeriodicElement[] = [
 ];
