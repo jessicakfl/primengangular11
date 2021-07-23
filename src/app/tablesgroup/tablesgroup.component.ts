@@ -57,8 +57,9 @@ export class TablesgroupComponent implements OnInit {
   heightImage: number = 250;
   topImage: number = -90;
   leftImage: number = -40;
+  leftgroup:number=-40;
   groupwidth:number=400;
-  cardwidth:number=280;
+  cardwidth:number=250;
   heightgroup:number=190;
 
   drop(event: CdkDragDrop<string[]>) {
