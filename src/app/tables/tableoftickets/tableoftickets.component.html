@@ -1,4 +1,4 @@
-<div #box class="tableofgroup" [style.width.px]="width" [style.height.px]="height"
+<div #box class="tableticket" [style.width.px]="width" [style.height.px]="height"
     [style.transform]="'translate3d('+ left + 'px,' + top + 'px,' + '0px)'"
     [class.active]="status === 1 || status === 2" (mousedown)="setStatus($event, 2)"
     (window:mouseup)="setStatus($event, 0)">
@@ -10,9 +10,9 @@
     <p-table [responsive]="true" [rows]="10" [resizableColumns]="true" columnResizeMode="expand" [paginator]="true"
         [rowsPerPageOptions]="[10,15,20,25]" [value]="ImageList">
         <ng-template pTemplate="header">
-            <tr style="text-align:left;white-space:nowrap;">
-                <th>Weapn System</th>
-                <th style="width: 190px; word-wrap:normal;">Component Group</th>
+            <tr style="text-align:left;word-break:break-word;">
+                <th style="width:25%;word-break:break-word;">Weapon System</th>
+                <th style="width: 190px; word-break:break-word;">Component Group</th>
                 <th>In work</th>
                 <th>Late</th>
                 <th>On Time</th>

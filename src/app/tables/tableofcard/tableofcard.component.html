@@ -10,23 +10,19 @@
     <!--<span>{{width | number:'1.0-0'}}px</span>
     <span>{{height | number:'1.0-0'}}px</span>
     <span>({{left}}, {{top}})</span>-->
-    <label class="col-sm-3 col-form-label" style="background-color: skyblue; display:inline-block;width: 100%;">{{cardtitle}}</label>
-    <p-table [value]="cards"  styleClass="p-datatable-scrollable-header-box">
-        <ng-template pTemplate="header"> 
-            <tr style="text-align:left">
-                <th>Flight</th>
-                <th>From</th>
-                <!-- <th>To</th> -->
-            </tr>
-        </ng-template>
+    <label class="col-sm-3 col-form-label" style="background-color:#d8d8fc; display:inline-block;width: 100%;">{{cardtitle}}</label>
+    <p-table [value]="cards"  style="border-spacing: 5px 10px;">
+ -->
         <ng-template pTemplate="body" let-card>
-            <tr>
-                <div class="my-center-text">
-                <td>{{card.flightNumber}}</td>
-                </div>
+                <tr><td>{{card.name}}</td><td></td></tr>
+                    <tr>
+                <td><input style="background-color: #d8d8fc;" type ="text"/> </td>
+                <td></td>
+                <td>Go-></td>
+                </tr>
+                <!-- </div> -->
                 <!-- <td>{{card.origin}}</td>
                 <td>{{card.destination}}</td> -->
-            </tr>
         </ng-template>
     </p-table>
 </div>

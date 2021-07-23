@@ -1,3 +1,10 @@
+.tableticket {
+    outline: 1px solid #000080 ;
+    &.active {
+        outline-style: solid;
+        background-color: #d8d8fc;
+    }
+}
 tr:nth-child(even) {
     background-color: #d8d8fc;
 }

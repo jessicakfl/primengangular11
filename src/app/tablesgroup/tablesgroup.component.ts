@@ -54,11 +54,11 @@ export class TablesgroupComponent implements OnInit {
   // dataSource8 = ELEMENT_DATA8;
   displayedColumns: string[] = ['position', 'name'];
   widthImage: number = 600;
-  heightImage: number = 190;
+  heightImage: number = 250;
   topImage: number = -90;
   leftImage: number = -40;
   groupwidth:number=400;
-  cardwidth:number=250;
+  cardwidth:number=280;
   heightgroup:number=190;
 
   drop(event: CdkDragDrop<string[]>) {

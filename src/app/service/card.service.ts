@@ -16,8 +16,10 @@ export class CardService {
   constructor(private http: HttpClient) { }
 
   private cards: Card[] = [
-    { "flightNumber": "ab22", "origin": "LAX", "destination": "asdf" },
-    { "flightNumber": "as32", "origin": "LAX", "destination": "ddd" },
+    { "name": "Seldlog Number"},
+    { "name": "Tracking Number" },
+    { "name": "Part Number"},
+    { "name": "MSN" },
   ];
   private groups: Group[] = [
     { "id": "1", "name": "January", "complete": "82", "late": "1", "ontime": "81", "latep": "1.22%" },
