@@ -13,13 +13,12 @@
 </div> -->
 <div class="container">
     <div class="column-container" id="div1">
-
+        <button class="close" style="width: 22px; background-color: grey;border-radius: 4px;font-size: 10px;" onclick="document.getElementById('div1').style.display='none'"> <i class="fa fa-close"></i>X</button>
         <div class="list" cdkDropList #todoList="cdkDropList" [cdkDropListData]="dataSource"
             [cdkDropListConnectedTo]="[doneList]" (cdkDropListDropped)="drop($event)">
             <h1 style="visibility: hidden;">A</h1>
             <mat-card *ngFor="let todo of dataSource" cdkDrag>
                 <mat-card-header>
-                    <!-- <mat-card-title>            <button class="close" onclick="document.getElementById('div1').style.display='none'">X</button></mat-card-title> -->
                     <mat-card-content>
                         <app-tableoftickets [width]="widthImage" [height]="heightImage" [left]="leftImage"
                             [top]="topImage"></app-tableoftickets>
@@ -30,13 +29,13 @@
     </div>
 
     <div class="column-container2" id=div2>
+        <button class="close" style="width: 22px; background-color: grey;border-radius: 4px;font-size: 10px;" onclick="document.getElementById('div2').style.display='none'"> <i class="fa fa-close"></i>X</button>
         <!-- <button class="close" onclick="document.getElementById('div2').style.display='none'">X</button> -->
         <div class="list" cdkDropList #todoList2="cdkDropList" [cdkDropListData]="dataSource2"
             [cdkDropListConnectedTo]="[doneList2]" (cdkDropListDropped)="drop($event)">
             <h1 style="visibility: hidden;">A</h1>
             <mat-card *ngFor="let complete of dataSource2" cdkDrag>
                 <mat-card-header>
-                    <!-- <mat-card-title>{{complete.position}}</mat-card-title> -->
                     <mat-card-content>
                         <tableofgroup [width]="groupwidth" [height]="heightgroup" [left]="leftImage" [top]="topImage">
                         </tableofgroup>
@@ -46,7 +45,7 @@
         </div>
     </div>
     <div class="column-container3" id="div3">
-        <!-- <button class="close" onclick="document.getElementById('div3').style.display='none'">X</button> -->
+        <button class="close" style="width: 22px; background-color: grey;border-radius: 4px;font-size: 10px;" onclick="document.getElementById('div3').style.display='none'"> <i class="fa fa-close"></i>X</button>
         <div class="list" cdkDropList #todoList="cdkDropList" [cdkDropListData]="dataSource3"
             [cdkDropListConnectedTo]="[doneList3]" (cdkDropListDropped)="drop($event)">
             <h1 style="visibility: hidden;">A</h1>
@@ -62,7 +61,7 @@
     </div>
 
     <div class="column-container4" id="div4">
-        <!-- <button class="close" onclick="document.getElementById('div4').style.display='none'">X</button> -->
+       <button class="close" style="width: 22px; background-color: grey;border-radius: 4px;font-size: 10px;" onclick="document.getElementById('div4').style.display='none'"> <i class="fa fa-close"></i>X</button>
         <div class="list" cdkDropList #doneList="cdkDropList" [cdkDropListData]="dataSource4"
             [cdkDropListConnectedTo]="[todoList]" (cdkDropListDropped)="drop($event)">
             <h1 style="visibility: hidden;">A</h1>
@@ -77,7 +76,7 @@
         </div>
     </div>
     <div class="column-container5" id="div5">
-        <!-- <button class="close" onclick="document.getElementById('div5').style.display='none'">X</button> -->
+        <button class="close" style="width: 22px; background-color: grey;border-radius: 4px;font-size: 10px;" onclick="document.getElementById('div5').style.display='none'"> <i class="fa fa-close"></i>X</button>
         <div class="list" cdkDropList #doneList2="cdkDropList" [cdkDropListData]="dataSource5"
             [cdkDropListConnectedTo]="[todoList2]" (cdkDropListDropped)="drop($event)">
             <h1 style="visibility: hidden;">A</h1>
@@ -92,7 +91,7 @@
         </div>
     </div>
     <div class="column-container6" id="div6">
-        <!-- <button class="close" onclick="document.getElementById('div6').style.display='none'">X</button> -->
+        <button class="close" style="width: 22px; background-color: grey;border-radius: 4px;font-size: 10px;" onclick="document.getElementById('div6').style.display='none'"> <i class="fa fa-close"></i>X</button>
         <div class="list" cdkDropList #doneList3="cdkDropList" [cdkDropListData]="dataSource6"
             [cdkDropListConnectedTo]="[todoList]" (cdkDropListDropped)="drop($event)">
             <h1 style="visibility: hidden;">A</h1>

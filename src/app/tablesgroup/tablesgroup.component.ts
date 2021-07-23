@@ -53,7 +53,7 @@ export class TablesgroupComponent implements OnInit {
   // dataSource7 = ELEMENT_DATA7;
   // dataSource8 = ELEMENT_DATA8;
   displayedColumns: string[] = ['position', 'name'];
-  widthImage: number = 600;
+  widthImage: number = 550;
   heightImage: number = 250;
   topImage: number = -90;
   leftImage: number = -40;

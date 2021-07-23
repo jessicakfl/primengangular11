@@ -1,4 +1,4 @@
-<div #box class="tableofgroup" [style.width.px]="width" [style.height.px]="height"
+<div #box class="tableofgroup" id ="div2" [style.width.px]="width" [style.height.px]="height"
     [style.transform]="'translate3d('+ left + 'px,' + top + 'px,' + '0px)'"
     [class.active]="status === 1 || status === 2" (mousedown)="setStatus($event, 2)"
     (window:mouseup)="setStatus($event, 0)">
