@@ -31,7 +31,7 @@ export class TableOfCardComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.cards = this.cardService.getCards();
-    this.cardtitle = "Cards Table";
+    this.cardtitle = "Search Avg";
     this.refreshImageList();
   }
 

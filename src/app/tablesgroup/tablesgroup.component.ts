@@ -13,11 +13,12 @@ const ELEMENT_DATA: PeriodicElement[] = [
   // { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
 ];
 const ELEMENT_DATA2: PeriodicElement[] = [
-  { position: 2, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
+  { position: 3, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
+  // { position: 4, name: 'Helium', weight: 4.0026, symbol: 'He' },
 ];
 const ELEMENT_DATA3: PeriodicElement[] = [
-  { position: 2, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  // { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
+  { position: 5, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
+  // { position: 6, name: 'Helium', weight: 4.0026, symbol: 'He' },
 ];
 const ELEMENT_DATA4: PeriodicElement[] = [
 ];
@@ -26,10 +27,10 @@ const ELEMENT_DATA5: PeriodicElement[] = [
 ];
 const ELEMENT_DATA6: PeriodicElement[] = [
 ];
-const ELEMENT_DATA7: PeriodicElement[] = [
-];
-const ELEMENT_DATA8: PeriodicElement[] = [
-];
+// const ELEMENT_DATA7: PeriodicElement[] = [
+// ];
+// const ELEMENT_DATA8: PeriodicElement[] = [
+// ];
 @Component({
   selector: 'app-tablesgroup',
   templateUrl: './tablesgroup.component.html',
@@ -49,13 +50,16 @@ export class TablesgroupComponent implements OnInit {
   dataSource4 = ELEMENT_DATA4;
   dataSource5 = ELEMENT_DATA5;
   dataSource6 = ELEMENT_DATA6;
-  dataSource7 = ELEMENT_DATA7;
-  dataSource8 = ELEMENT_DATA8;
+  // dataSource7 = ELEMENT_DATA7;
+  // dataSource8 = ELEMENT_DATA8;
   displayedColumns: string[] = ['position', 'name'];
-  widthImage: number = 558;
-  heightImage: number = 166;
-  topImage: number = -86;
-  leftImage: number = -35;
+  widthImage: number = 600;
+  heightImage: number = 190;
+  topImage: number = -90;
+  leftImage: number = -40;
+  groupwidth:number=400;
+  cardwidth:number=250;
+  heightgroup:number=190;
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
