@@ -27,6 +27,10 @@ const ELEMENT_DATA5: PeriodicElement[] = [
 ];
 const ELEMENT_DATA6: PeriodicElement[] = [
 ];
+const ELEMENT_DATA7: PeriodicElement[] = [
+  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
+  // { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
+];
 // const ELEMENT_DATA7: PeriodicElement[] = [
 // ];
 // const ELEMENT_DATA8: PeriodicElement[] = [
@@ -50,7 +54,7 @@ export class TablesgroupComponent implements OnInit {
   dataSource4 = ELEMENT_DATA4;
   dataSource5 = ELEMENT_DATA5;
   dataSource6 = ELEMENT_DATA6;
-  // dataSource7 = ELEMENT_DATA7;
+  dataSource7 = ELEMENT_DATA7;
   // dataSource8 = ELEMENT_DATA8;
   displayedColumns: string[] = ['position', 'name'];
   widthImage: number = 550;

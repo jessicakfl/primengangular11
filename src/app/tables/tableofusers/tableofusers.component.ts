@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, HostListener, Output, EventEmitter } from '@angular/core';
+import { Group } from 'src/app/model/group';
 import { Image } from 'src/app/model/image';
 import { CardService } from 'src/app/service/card.service';
 const enum Status {
@@ -19,18 +20,16 @@ export class TableofusersComponent implements OnInit {
   public status: Status = Status.OFF;
   private mouseClick: { x: number, y: number, left: number, top: number }
   constructor(private cardService: CardService) { }
-  ImageList: Image = [];
+  UserList: Group[] = [];
   @Input('width') public width: number;
   @Input('left') public left: number;
   @Input('top') public top: number;
   @Input('height') public height: number;
   ngOnInit(): void {
-    this.refreshImageList();
+    this.refreshUsersList();
   }
-  refreshImageList() {
-    this.cardService.getImageList().subscribe((data: any) => {
-      this.ImageList = data;
-    })
+  refreshUsersList() {
+    this.UserList = this.cardService.getUsers();
   }
   title ="Table of Users";
   ngAfterViewInit() {
@@ -61,51 +60,10 @@ export class TableofusersComponent implements OnInit {
   @HostListener('window:mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
     this.mouse = { x: event.clientX, y: event.clientY };
-
-    // if (this.status === Status.RESIZE) this.resize();
-    // else if (this.status === Status.MOVE) this.move();
   }
 
-  // private resize() {
-  //   //if(this.resizeCondMeet()){
-  //   this.width = Number(this.mouse.x > this.boxPosition.left) ? this.mouse.x - this.boxPosition.left : 0;
-  //   this.height = Number(this.mouse.y > this.boxPosition.top) ? this.mouse.y - this.boxPosition.top : 0;
-  //   if (this.width && this.height) {
-  //     var val = { id: 3, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left, ifpaging: this.ifimagepaging };
-  //     this.cardService.setConfigSettings(val).subscribe(res => {
-  //       this.msg = res.toString();
-  //     });
-  //   }
-    // }
-  // }
 
   private resizeCondMeet() {
     return (this.mouse.x < this.containerPos.right && this.mouse.y < this.containerPos.bottom);
   }
-
-  // private move() {
-  //   //if(this.moveCondMeet()){
-  //   this.left = this.mouseClick.left + (this.mouse.x - this.mouseClick.x);
-  //   this.top = this.mouseClick.top + (this.mouse.y - this.mouseClick.y);
-  //   if (this.width && this.height) {
-  //     var val = { id: 3, nw: this.width.toFixed(), nh: this.height.toFixed(), nt: this.top, nl: this.left, ifpaging: this.ifimagepaging };
-  //     this.cardService.setConfigSettings(val).subscribe(res => {
-  //       this.msg = res.toString();
-  //     });
-  //   }
-  //   // }
-  // }
-
-  // private moveCondMeet() {
-  //   const offsetLeft = this.mouseClick.x - this.boxPosition.left;
-  //   const offsetRight = this.width - offsetLeft;
-  //   const offsetTop = this.mouseClick.y - this.boxPosition.top;
-  //   const offsetBottom = this.height - offsetTop;
-  //   return (
-  //     this.mouse.x > this.containerPos.left + offsetLeft &&
-  //     this.mouse.x < this.containerPos.right - offsetRight &&
-  //     this.mouse.y > this.containerPos.top + offsetTop &&
-  //     this.mouse.y < this.containerPos.bottom - offsetBottom
-  //   );
-  // }
 }

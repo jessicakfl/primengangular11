@@ -35,7 +35,12 @@ export class CardService {
     { "id": "11", "name": "March", "complete": "82", "late": "1", "ontime": "81", "latep": "1.22%" },
     { "id": "12", "name": "Febury", "complete": "82", "late": "1", "ontime": "81", "latep": "1.22%" },
     { "id": "13", "name": "Janurary", "complete": "82", "late": "1", "ontime": "81", "latep": "1.22%" },
-
+  ];
+  private users: Group[] = [
+    { "tall": "890021 801067", "moun":"pylon", "date":"04-08-07", "adt":"14-aug-08", "prj":"14-jan-08"},
+    { "tall": "890021 801067", "moun":"pylon:cdd", "date":"04-08-07", "adt":"14-aug-08", "prj":"14-jan-08"},
+    { "tall": "890021 801067", "moun":"cutboard pylon", "date":"04-08-07", "adt":"14-aug-08", "prj":"14-jan-08"},
+    { "tall": "890021 801067", "moun":"pylo:ned", "date":"04-08-07", "adt":"14-aug-08", "prj":"14-jan-08"},
   ];
   private width: number;
 
@@ -46,6 +51,11 @@ export class CardService {
   public getGroups(): Group[] {
     return this.groups;
   }
+
+  public getUsers(): Group[] {
+    return this.users;
+  }
+
   setWidth(w: number) {
     this.width = w;
   }

@@ -5,22 +5,27 @@
     <div class="resize-action" (mousedown)="setStatus($event, 1)"></div>
     <label class="col-sm-3 col-form-label"
         style="background-color:#bebefa; display:inline-block;width: 100%;">{{title}}</label>
-    <p-table [value]="ImageList" [responsive]="true" [rows]="10" [resizableColumns]="true" columnResizeMode="expand" [paginator]="true"
+    <p-table [value]="UserList" [responsive]="true" [rows]="10" [resizableColumns]="true" columnResizeMode="expand" [paginator]="true"
     [rowsPerPageOptions]="[10,15,20,25]">
         <ng-template pTemplate="header">
             <tr style="text-align:left">
-                <th>ID</th>
-                <th>Name</th>
-                <th>Latitude</th>
-                <th>Longtitude</th>
+                <th>Tall Mr</th>
+                <th>Shoetag</th>
+                <th>Moun</th>
+                <th>Part Mr</th>
+                <th>Due Maint</th>
+                <th>Revd Maint</th>
+                <th>Adt Need</th>
+                <th>Prj EDD</th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-image>
+        <ng-template pTemplate="body" let-user>
             <tr>
-                <td>{{image.id}}</td>
-                <td>{{image.name}}</td>
-                <td>{{image.nx}}</td>
-                <td>{{image.ny}}</td>
+                <td>{{user.tall}}</td>
+                <td>{{user.moun}}</td>
+                <td>{{user.date}}</td>
+                <td>{{user.adt}}</td>
+                <td>{{user.prj}}</td>
             </tr>
         </ng-template>
     </p-table>
