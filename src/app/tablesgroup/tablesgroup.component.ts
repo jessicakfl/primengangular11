@@ -59,12 +59,12 @@ export class TablesgroupComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name'];
   widthImage: number = 550;
   heightImage: number = 250;
-  topImage: number = -90;
+  topImage: number = -50;
   leftImage: number = -40;
   leftgroup:number=-40;
   groupwidth:number=400;
   cardwidth:number=250;
-  heightgroup:number=190;
+  heightgroup:number=220;
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
