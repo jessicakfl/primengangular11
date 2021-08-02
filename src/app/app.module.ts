@@ -14,6 +14,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ImagedirectionsComponent } from './tables/imagedirections/imagedirections.component';
 import { ImagenotesComponent } from './tables/imagenotes/imagenotes.component';
+import { TableofcardsComponent } from './tables/tableofcards/tableofcards.component';
+import { SubtablesComponent } from './tables/subtables/subtables.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { ImagenotesComponent } from './tables/imagenotes/imagenotes.component';
     TablesDashboard2Component,
     ImagedirectionsComponent,
     ImagenotesComponent,
+    TableofcardsComponent,
+    SubtablesComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,7 @@ import { ImagenotesComponent } from './tables/imagenotes/imagenotes.component';
     HttpClientModule,
     MaterialModule,
     DragDropModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
