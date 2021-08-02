@@ -19,7 +19,7 @@ const FORWARDLOOK_DATA: ForwardLook[] = [
 
 export class ForwardLookComponent implements OnInit {
 
-  displayedColumns: string[] = ['ForwardLook', 'Qty'];
+  displayedColumns: string[] = ['ForwardLook', 'Qty', 'id'];
   dataSource = FORWARDLOOK_DATA;
   tableTitle = 'Forward Look'
 
