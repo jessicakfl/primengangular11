@@ -76,7 +76,7 @@
                     <mat-header-cell *matHeaderCellDef >{{disCol}}</mat-header-cell>
                     <!-- <ng-container *ngIf="disCol === 'Backorders'" style="color: aqua;"> -->
                         <mat-cell *matCellDef="let element"> 
-                          <a [routerLink]="['subtables', item.id]">
+                          <a [routerLink]="['subtables', element.id]">
                           {{element[disCol]}}</a></mat-cell>
                     <!-- </ng-container> -->
                     <!-- <ng-container *ngIf="disCol !== 'Backorders'" style="font-weight:400; color:aqua;"> -->
