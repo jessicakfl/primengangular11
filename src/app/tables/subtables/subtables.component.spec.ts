@@ -1,25 +1,27 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CardService } from 'src/app/service/card.service';
 import { SubtablesComponent } from './subtables.component';
 
 describe('SubtablesComponent', () => {
   let component: SubtablesComponent;
   let fixture: ComponentFixture<SubtablesComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ SubtablesComponent ]
-    })
-    .compileComponents();
+  beforeEach(async(() => {let cardServeSpyObj = jasmine.createSpyObj('cardService', ['']);
+ TestBed.configureTestingModule({
+  imports: [
+  HttpClientTestingModule], 
+  declarations:[SubtablesComponent],
+  providers: [{provide: CardService,useValue:cardServeSpyObj}] 
+}).compileComponents();
+cardServeSpyObj = TestBed.get(CardService);
   }));
-
-  beforeEach(() => {
+  beforeEach(()=>{
     fixture = TestBed.createComponent(SubtablesComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+
   });
 
-  it('should create', () => {
+  it('would create', () => {
     expect(component).toBeTruthy();
   });
 });

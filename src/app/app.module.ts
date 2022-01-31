@@ -39,7 +39,7 @@ import { SubtablesComponent } from './tables/subtables/subtables.component';
     DragDropModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
